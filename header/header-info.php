@@ -1,7 +1,11 @@
-<ul class="header-info">
-  <li class="fela">Nationally Recognized FELA Attorneys</li>
+<ul class="header-info flexbox center-children">
+  <li class="fela">
+    <i class="fa fa-gavel denim pull-left"></i>
+    Nationally Recognized <span class="block">FELA Attorneys</span>
+  </li>
   <li class="phone">
-    <small>IF YOU OR A LOVED ONE ARE INJURED - CALL US</small>
+    <small class="block">IF YOU OR A LOVED ONE ARE INJURED - CALL US</small>
+    <i class="fa fa-phone denim pull-left"></i>
     <a href="tel:+1<?php echo remove_special_chars(get_option('phonenumber')); ?>">
       <?php echo get_option('phonenumber'); ?>
     </a>
