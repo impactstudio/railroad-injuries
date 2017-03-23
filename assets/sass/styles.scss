@@ -46,18 +46,12 @@ NAVIGATION: css menus can be great for breaking up your code into modules as wel
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
 
 $cream: #f1f1f1;
-$denim: #12649e;
-$dark_denim: #00497c;
-$pumpkin: #fd9846;
+$denim: #0977bc;
+$leaf: #8dc641;
+$cloudy: #e4e4e4;
+$dark: #222;
 $ash: #333;
 $smoke: #666;
-$light_smoke: #dfdfdf;
-$glacier: #75cac6;
-$sky: #75caff;
-$nunito: 'Nunito Sans', sans-serif;
-$raleway: 'Raleway', 'Nunito-Sans';
-
-
 $image_path: "../../img/";
 $video_path: "../../video/";
 
@@ -145,8 +139,8 @@ $video_path: "../../video/";
   @include transition(ease-in, 0.5s);
 }
 
-.btn-pumpkin {
-  background-color: $pumpkin;
+.btn-ash {
+  background-color: $ash;
   color: $cream;
   border-radius: 0;
   padding: 6px 16px;
@@ -237,7 +231,6 @@ $video_path: "../../video/";
 
 * {
   box-sizing: border-box;
-  font-family: $nunito;
 }
 
 body {
@@ -269,7 +262,7 @@ ul {
 
 a {
   @include transition(ease-out, 0.5s);
-  color: $pumpkin;
+  color: $leaf;
 }
 
 a:hover {
@@ -285,6 +278,10 @@ a:hover {
 /*--------------------------------
 2.0 HEADER
 --------------------------------*/
+
+.header {
+  background-color: $ash;
+}
 
 .hamburger {
   background: url("#{$image_path}hamburger.png") center center no-repeat;
@@ -428,7 +425,7 @@ footer {
 }
 
 .footer-company-info li a:hover {
-  color: $pumpkin;
+  color: $leaf;
 }
 
 .footer-links {
@@ -480,7 +477,6 @@ footer {
 --------------------------------*/
 
 .hero {
-  background-color: $pumpkin;
   height: 351px;
   margin-top: -39px;
   padding-top: 120px;
@@ -492,10 +488,8 @@ footer {
 }
 
 .hero h1 {
-  font-family: $nunito;
   font-weight: bold;
   font-size: 46px;
-  color: $cream;
 }
 
 .hero-image {
@@ -507,7 +501,7 @@ footer {
 }
 
 .breadcrumb-container {
-  background-color: $light_smoke;
+  background-color: $dark;
 }
 
 .breadcrumbs {
@@ -542,9 +536,7 @@ footer {
   color: $denim;
 }
 
-.showpage-title-link:hover {
-  color: $pumpkin;
-}
+.showpage-title-link:hover {}
 
 .showpage-snippet {
   color: $ash;
@@ -572,7 +564,6 @@ footer {
 }
 
 .team-member-name {
-  font-family: $raleway, $nunito;
   color: $denim;
   font-size: 22px;
   margin-bottom: 5px;
@@ -712,76 +703,6 @@ footer {
 .search-result-excerpt {
   text-align: justify;
   width: 100%;
-}
-
-/*--------------------------------
-11.0 PORTFOLIO
---------------------------------*/
-
-.gallery-wrapper .simplefilter {
-  margin-left: 15px;
-  text-align: left;
-}
-
-.gallery-wrapper .simplefilter li:hover {
-  color: #e98b41 !important;
-  cursor: pointer;
-  display: inline-block;
-  text-transform: capitalize;
-  padding: 11px 32px;
-  margin-right: 10px;
-  background-color: transparent !important;
-  background: transparent !important;
-  transition: ease-in-out .5s;
-}
-
-.gallery-wrapper .simplefilter_169 li, .simplefilter li {
-  color: #afafaf !important;
-  cursor: pointer;
-  display: inline-block;
-  text-transform: capitalize;
-  padding: 11px 32px;
-  margin-right: 10px;
-  background-color: transparent !important;
-  background: transparent !important;
-  border: 2px solid #afafaf !important;
-  font-size: 18px;
-}
-
-.gallery-wrapper .simplefilter_169 li:hover, .simplefilter li:hover {
-  color: #e98b41 !important;
-  cursor: pointer;
-  display: inline-block;
-  text-transform: capitalize;
-  padding: 11px 32px;
-  margin-right: 10px;
-  background-color: transparent !important;
-  border: solid 2px $pumpkin !important;
-  transition: ease-in-out .5s;
-}
-
-.gallery-wrapper .simplefilter_169 li.active {
-  background-color: transparent !important;
-  color: $pumpkin !important;
-  border: 2px solid $pumpkin !important;
-}
-
-.filtr-container {
-  margin-top: 30px;
-}
-
-.pfg-img {
-  height: 200px !important;
-}
-
-.simplefilter_199, /* to hide filter on facility page */
-.simplefilter_395,
-.simplefilter_396,
-.simplefilter_397,
-.simplefilter_398,
-.simplefilter_399,
-.modal-title {
-  display: none;
 }
 
 /*--------------------------------
@@ -990,13 +911,6 @@ footer {
 
   .carousel-caption {
     text-align: center;
-  }
-
-  .caption {
-    padding: 6px 6px 27px 0;
-    color: #75caff;
-    width: 80%;
-    margin: 0 auto;
   }
 
   .hero-caption {
