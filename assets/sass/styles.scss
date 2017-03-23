@@ -1,0 +1,1370 @@
+// customize bootstrap variables here:
+@import "variables";
+@import "bootstrap";
+
+/*******************
+NAVIGATION: css menus can be great for breaking up your code into modules as well as helping you quickly navigate to a page/sections styles via cmd+f
+
+--------------------------------
+1.0 DEFAULT VARIABLES REUSABLE "OBJECTS"
+- 1.1 VARIABLES
+- 1.2 MIXINS
+- 1.3 REUSABLES
+- 1.4 DEFAULT
+- 1.5 FORMS
+
+2.0 HEADER
+
+3.0 HOME
+
+4.0 SIDEBAR
+
+5.0 FOOTER
+
+6.0 POSTS
+- 6.1 COMMENTS
+
+7.0 FULLWIDTH TEMPLATE
+
+8.0 SHOWPAGE TEMPLATE
+
+9.0 TEAM TEMPLATE
+
+10.0 SUBPAGE - MARKETS, CORE CAPABILITIES, SEARCH
+
+11.0 PORTFOLIO
+
+12.0 MEDIA QUERIES
+
+********************/
+
+/*--------------------------------
+1.1 VARIABLES
+--------------------------------*/
+
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+
+$cream: #f1f1f1;
+$denim: #12649e;
+$dark_denim: #00497c;
+$pumpkin: #fd9846;
+$ash: #333;
+$smoke: #666;
+$light_smoke: #dfdfdf;
+$glacier: #75cac6;
+$sky: #75caff;
+$nunito: 'Nunito Sans', sans-serif;
+$raleway: 'Raleway', 'Nunito-Sans';
+
+
+$image_path: "../../img/";
+$video_path: "../../video/";
+
+/*--------------------------------
+1.2 MIXINS
+--------------------------------*/
+// @mixin selector($attribute) and then @include selector(attribute ex. 10px)are great for vendor prefixes
+
+// @extend .class reuse classes with this sass feature
+
+// learn more about sass here http://sass-lang.com/guide
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transition($prop, $duration) {
+  -webkit-transition: $prop, $duration;
+  -moz-transition: $prop, $duration;
+  -ms-transition: $prop, $duration;
+  transition: $prop, $duration;
+}
+
+/*--------------------------------
+1.3 REUSABLES
+--------------------------------*/
+
+.flexbox {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: -ms-flex;         /* IE 11 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.center-children { /* must use flexbox */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.content-wrapper {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.btn-black {
+  background-color: $ash;
+  color: $cream;
+  border-radius: 0;
+  padding: 6px 16px;
+  @include transition(ease-out, 0.5s);
+}
+
+.btn-black:hover {
+  background-color: $denim;
+  color: $cream;
+  @include transition(ease-in, 0.5s);
+}
+
+.btn-denim {
+  background-color: $denim;
+  color: $cream;
+  border-radius: 0;
+  padding: 6px 16px;
+  font-size: 22px;
+  @include transition(ease-out, 0.5s);
+}
+
+.btn-denim:hover {
+  background-color: $ash;
+  color: $cream;
+  @include transition(ease-in, 0.5s);
+}
+
+.btn-pumpkin {
+  background-color: $pumpkin;
+  color: $cream;
+  border-radius: 0;
+  padding: 6px 16px;
+  font-size: 22px;
+  @include transition(ease-out, 0.5s);
+}
+
+.btn-pumpkin:hover {
+  background-color: $denim;
+  color: $cream;
+  @include transition(ease-in, 0.5s);
+}
+
+.main-headline {
+  font-size: 46px;
+  color: $denim;
+  margin-bottom: 30px;
+}
+
+.main-headline span {
+  display:inline-block;
+  border-bottom:4px solid $denim;
+  padding-bottom:10px;
+}
+
+.sub-headline {
+  font-size: 30px;
+  color: $denim;
+  margin-bottom: 30px;
+}
+
+.sub-headline span {
+  display:inline-block;
+  border-bottom: 2px solid $denim;
+  padding-bottom: 10px;
+}
+
+.icon-cream {
+  color: $cream;
+}
+
+/* image link hover box */
+
+.sortandshuffle {
+  display: none;
+}
+
+.link-hover-image-container {
+  position: relative;
+  width: 100%;
+  display: table;
+}
+
+.link-hover-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.image-link-box-overlay {
+  position: absolute;
+  background-color: rgba(18, 100, 158, .8);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  @include transition(ease-in-out, 0.5s);
+  font-size: 60px;
+}
+
+.image-link-box-overlay:hover {
+  opacity: 1;
+}
+
+.image-link-box-icon {
+  padding-top: 20%; /* this might need to be changed */
+}
+
+/* end image link hover box */
+
+/*--------------------------------
+1.4 DEFAULT
+--------------------------------*/
+
+* {
+  box-sizing: border-box;
+  font-family: $nunito;
+}
+
+body {
+  background-color: $cream;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+  margin-top: 0;
+}
+
+p {
+  line-height: 27px;
+  margin-bottom: 20px;
+}
+
+i {}
+
+/* fixes horizontal overflow that sometimes happens with boostrap nested rows */
+// .row {
+//   margin-left: 0;
+//   margin-right: 0;
+// }
+
+ul {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+a {
+  @include transition(ease-out, 0.5s);
+  color: $pumpkin;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $denim;
+  @include transition(ease-in, 0.5s);
+}
+
+/*--------------------------------
+1.5 FORMS
+--------------------------------*/
+
+/*--------------------------------
+2.0 HEADER
+--------------------------------*/
+
+.hamburger {
+  background: url("#{$image_path}hamburger.png") center center no-repeat;
+}
+
+.cross {
+  background: url("#{$image_path}x.png") center center no-repeat;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.hamburger, .cross {
+  background-color: transparent;
+  background-size: contain;
+  border: none;
+  outline: 0;
+  height: 59px;
+  width: 30px;
+  position: absolute;
+  right: 15px;
+  display: none;
+  z-index: 6;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+
+.cross:hover {
+  cursor: pointer;
+}
+
+/*--------------------------------
+3.0 HOME
+--------------------------------*/
+
+/*--------------------------------
+4.0 SIDEBAR
+--------------------------------*/
+
+/*--------------------------------
+5.0 FOOTER
+--------------------------------*/
+
+footer {
+  color: $cream;
+}
+
+.bg-footer {
+  background: url("#{$image_path}bg_footer.jpg") center top no-repeat;
+  background-size: cover;
+}
+
+.footer-widget {
+  height: 261px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-right: 2px solid $cream;
+}
+
+.footer-widget:first-child {
+  padding-left: 0;
+}
+
+.footer-widget:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.footer-logo {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.footer-owner-msg {
+  line-height: 22px;
+  font-size: 13px;
+  font-style: italic;
+  letter-spacing: -1px
+}
+
+.footer-owner-msg strong{
+  font-style: normal;
+  display: block;
+}
+
+/* footer nav widget */
+
+#menu-core-capabilities {
+  background-color: transparent;
+  margin-top: 0;
+}
+
+#menu-core-capabilities, #menu-core-capabilities li, .footer-external-links li {
+  display: block;
+  color: $cream;
+  text-align: left;
+}
+
+#menu-core-capabilities, .footer-external-links, .footer-external-links li a {
+  padding: 0;
+}
+
+#menu-core-capabilities li, .footer-external-links li {
+  border-right: 0;
+  padding: 0;
+  line-height: 30px;
+  list-style: none;
+}
+
+.footer-icon {
+  padding-right: 5px;
+}
+
+.footer-external-links li a {
+  color: $cream;
+}
+
+.footer-widget h4 {
+  font-size: 20px;
+  display: inline-block;
+  color: $cream;
+  border-bottom: 3px solid;
+  padding-bottom: 5px;
+}
+
+.facebook:hover {
+  color: #3b5998;
+  @include transition(ease-in-out, 0.5s);
+}
+
+.google:hover {
+  color: #ec5146;
+  @include transition(ease-in-out, 0.5s);
+}
+
+.linkedin:hover {
+  color: #0177b5;
+}
+
+.footer-company-info li a:hover {
+  color: $pumpkin;
+}
+
+.footer-links {
+  background-color: #111;
+  list-style: none;
+  text-align: center;
+  padding: 17px 0;
+}
+
+.footer-link {
+  display: inline-block;
+  padding-right: 10px;
+  color: $smoke;
+}
+
+.footer-link a {
+  color: $smoke;
+  font-weight: normal;
+}
+
+.impact-logo {
+  width: 150px;
+  display: inline-block;
+  padding-left: 5px;
+}
+
+/*--------------------------------
+6.0 POSTS
+--------------------------------
+
+/*--------------------------------
+6.1 COMMENTS
+--------------------------------*/
+
+#comment {
+  width: 100%;
+}
+
+.comment-body {
+  font-size: 18px;
+}
+
+/*--------------------------------
+7.0 FULLWIDTH TEMPLATE
+--------------------------------*/
+
+/*--------------------------------
+8.0 SHOWPAGE TEMPLATE
+--------------------------------*/
+
+.hero {
+  background-color: $pumpkin;
+  height: 351px;
+  margin-top: -39px;
+  padding-top: 120px;
+  position: relative;
+}
+
+.hero .black-overlay {
+  opacity: .5;
+}
+
+.hero h1 {
+  font-family: $nunito;
+  font-weight: bold;
+  font-size: 46px;
+  color: $cream;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.breadcrumb-container {
+  background-color: $light_smoke;
+}
+
+.breadcrumbs {
+  font-size: 16px;
+  padding: 25px 0;
+}
+
+.thumbnail {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  display: block;
+  margin-bottom: 0;
+  height: 200px;
+}
+
+.thumbnail img {
+  height: 100%;
+  width: 100%;
+}
+
+.showpage-title {
+  color: $denim;
+  font-size: 22px;
+}
+
+.capability-icon {
+  color: $denim;
+}
+
+.showpage-title-link {
+  color: $denim;
+}
+
+.showpage-title-link:hover {
+  color: $pumpkin;
+}
+
+.showpage-snippet {
+  color: $ash;
+}
+
+.showpage-description {
+  padding: 0 15px;
+  text-align: justify;
+  font-size: 18px;
+}
+
+/*--------------------------------
+9.0 TEAM TEMPLATE
+--------------------------------*/
+
+.team {
+  text-align: center;
+}
+
+.team-headshot {
+  display: block;
+  width: 100%;
+  height: 263px;
+  margin: 0 auto 20px auto;
+}
+
+.team-member-name {
+  font-family: $raleway, $nunito;
+  color: $denim;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.team-member-role {
+  font-weight: bold;
+  font-size: 12px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.team-member-quote {
+  font-weight: 200;
+  margin-bottom: 0;
+  line-height: 23px;
+}
+
+/*--------------------------------
+10.0 SUBPAGE - MARKETS, CORE CAPABILITIES
+--------------------------------*/
+
+.subpage, .subpage-nav {
+  height: 100%;
+}
+
+.subpage {
+  position: relative;
+  background-color: #fff;
+}
+
+.subpage-nav-heading {
+  font-size: 20px;
+}
+
+.subpage-nav {
+  position: absolute;
+  width: 30%;
+  background-color: #efefef;
+}
+
+.subpage-nav-heading span {
+  display:inline-block;
+  border-bottom: 1px solid;
+  padding-bottom: 5px;
+}
+
+.nav-list {
+  list-style: none;
+}
+
+.nav-list li {
+  line-height: 34px;
+}
+
+.subpage-nav-links {
+  color: $ash;
+}
+
+.subpage-nav-links:hover {
+  color: $denim;
+}
+
+.additional-media {
+  height: 350px;
+  padding-bottom: 30px;
+}
+
+.additional-media video {
+  width: 100%;
+  height: 100%;
+}
+
+.additional-media img {
+  width: 100%;
+  height: 100%;
+}
+
+.alignright {
+  float: right;
+  margin: 10px 0 10px 30px;
+}
+
+.alignleft {
+  float: left;
+  margin: 10px 30px 10px 0;
+}
+
+.post h1, .post h2, .post h3, .post h4, .post h5 {
+  color: $denim;
+  margin-bottom: 20px;
+}
+
+.post a {
+  font-weight: bold;
+}
+
+.post p, .post li, .post blockquote {
+  font-size: 18px;
+  line-height: 33px;
+}
+
+.post p, .post blockquote {
+  text-align: justify;
+}
+
+.post li {
+  margin-left: 30px;
+  text-align: left;
+}
+
+.search-result {
+  list-style: none;
+  background: white;
+  padding: 30px;
+  overflow: hidden;
+  display: flex;
+}
+
+.search-result div {
+  float: left;
+}
+
+.search-result div p {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.search-result div small {
+  font-size: 16px;
+}
+
+.img-search-result {
+  display: block;
+}
+
+.search-result-excerpt {
+  text-align: justify;
+  width: 100%;
+}
+
+/*--------------------------------
+11.0 PORTFOLIO
+--------------------------------*/
+
+.gallery-wrapper .simplefilter {
+  margin-left: 15px;
+  text-align: left;
+}
+
+.gallery-wrapper .simplefilter li:hover {
+  color: #e98b41 !important;
+  cursor: pointer;
+  display: inline-block;
+  text-transform: capitalize;
+  padding: 11px 32px;
+  margin-right: 10px;
+  background-color: transparent !important;
+  background: transparent !important;
+  transition: ease-in-out .5s;
+}
+
+.gallery-wrapper .simplefilter_169 li, .simplefilter li {
+  color: #afafaf !important;
+  cursor: pointer;
+  display: inline-block;
+  text-transform: capitalize;
+  padding: 11px 32px;
+  margin-right: 10px;
+  background-color: transparent !important;
+  background: transparent !important;
+  border: 2px solid #afafaf !important;
+  font-size: 18px;
+}
+
+.gallery-wrapper .simplefilter_169 li:hover, .simplefilter li:hover {
+  color: #e98b41 !important;
+  cursor: pointer;
+  display: inline-block;
+  text-transform: capitalize;
+  padding: 11px 32px;
+  margin-right: 10px;
+  background-color: transparent !important;
+  border: solid 2px $pumpkin !important;
+  transition: ease-in-out .5s;
+}
+
+.gallery-wrapper .simplefilter_169 li.active {
+  background-color: transparent !important;
+  color: $pumpkin !important;
+  border: 2px solid $pumpkin !important;
+}
+
+.filtr-container {
+  margin-top: 30px;
+}
+
+.pfg-img {
+  height: 200px !important;
+}
+
+.simplefilter_199, /* to hide filter on facility page */
+.simplefilter_395,
+.simplefilter_396,
+.simplefilter_397,
+.simplefilter_398,
+.simplefilter_399,
+.modal-title {
+  display: none;
+}
+
+/*--------------------------------
+12.0 MEDIA QUERIES
+--------------------------------*/
+
+@media all and (min-width: 1440px) {
+  .caption {
+    font-size: 25px;
+    width: 80%;
+  }
+}
+
+@media \0 all {
+  .carousel {
+    display: inline-block;
+  }
+}
+
+@media all and (min-width: 1650px) {
+  .carousel-caption {
+    left: 20%;
+  }
+}
+
+@media all and (max-width: 1400px) {
+  .company-details {
+    font-size: 13px;
+  }
+}
+
+@media all and (max-width: 1199px) {
+  .credentials {
+    text-align: right;
+  }
+
+  h3.credential {
+    padding-right: 0;
+  }
+
+  .credential {
+    font-size: 13px;
+  }
+
+  .credential:first-child {
+    border-right: 0;
+  }
+
+  .certified-info {
+    display: inline-block;
+    padding-left: 2px;
+    padding-top: 0;
+  }
+
+  .blue-box {
+    width: 98px;
+  }
+
+  .menu li {
+    padding: 0 23px 0 0;
+  }
+
+  .menu li a {
+    letter-spacing: 0;
+  }
+
+  .menu li:first-child {
+    padding-left: 0;
+  }
+
+  .additional-media {
+    height: 250px;
+  }
+
+  .call-to-action-text {
+    text-align: center;
+    padding-bottom: 20px;
+    line-height: 35px;
+    margin-right: 0;
+  }
+
+  .markets-thumbnail-headline {
+    font-size: 30px;
+  }
+
+  .markets-thumbnail {
+    height: 150px;
+  }
+
+  .image-link-box-overlay {
+    font-size: 30px;
+  }
+
+  .image-link-box-icon {
+    padding-top: 22%;
+  }
+
+  .btn-container {
+    margin-bottom: 40px;
+  }
+
+  .team-headshot {
+    height: 163px;
+  }
+
+  .subpage-nav {
+    background-color: transparent;
+  }
+
+  .showpage-title {
+    font-size: 18px;
+  }
+
+  .footer-input,
+  input[type="email"].footer-input,
+  textarea.footer-input,
+  input[type="submit"].footer-form-submit {
+    font-size: 10px;
+    letter-spacing: 0px;
+  }
+
+  .quote-input-wrapper {
+    width: 31%;
+  }
+}
+
+@media all and (max-width: 991px) {
+  .company-details {
+    font-size: 9px;
+  }
+  .logo {
+    margin-bottom: 15px;
+  }
+
+  .flexbox {
+    flex-direction: column;
+  }
+
+  p:last-child {
+    margin-bottom: 20px;
+  }
+
+  .credential:first-child {
+    border-right: 0;
+    font-size: 20px;
+  }
+
+  .certified-info {
+    display: inline;
+  }
+
+  .primary-nav {
+    display: none;
+  }
+
+  .mobile-menu {
+    position: relative;
+    z-index: 7;
+  }
+
+  .desktop-search {
+    display: none;
+  }
+
+  .mobile-search {
+    display: block;
+    position: absolute;
+    bottom: 15px;
+  }
+
+  .mobile-menu, .hamburger, .cross {
+    display: block;
+  }
+
+  .menu {
+    flex-direction: column;
+    background-color: #333;
+    margin-top: 28px;
+  }
+
+  .menu li {
+    border-right: none;
+    text-align: center;
+    padding: 0 0 10px 0;
+  }
+
+  .menu li:nth-last-child(2) {
+    padding-right: 0;
+  }
+
+  .menu li a {
+    font-size: 12px;
+  }
+
+  #menu-core-capabilities .menu li a {
+    font-size: 9px;
+  }
+
+  #menu-core-capabilities .menu li {
+    padding: 0;
+  }
+
+  .item, .carousel, .carousel-inner>.item>img {
+    height: 380px;
+  }
+
+  .carousel-caption {
+    text-align: center;
+  }
+
+  .caption {
+    padding: 6px 6px 27px 0;
+    color: #75caff;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .hero-caption {
+    margin-left: 0;
+  }
+
+  .main-headline {
+    font-size: 35px;
+  }
+
+  .footer-widget {
+    border-right: 0;
+  }
+
+  .footer-widget:nth-child(3), .footer-widget:nth-child(4) {
+    padding-top: 30px;
+    height: auto;
+  }
+
+  .footer-widget:nth-child(3) {
+    padding-left: 0;
+  }
+
+  .team-headshot {
+    height: 263px;
+  }
+
+  .team-member-quote:last-child {
+    margin-bottom: 0;
+  }
+
+  .team-member-name {
+    padding-top: 35px;
+  }
+
+  .subpage-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .subpage-nav-wrapper {
+    padding-top: 0;
+  }
+
+  .flex-order-1 {
+    order: 1;
+  }
+
+  .flex-order-2 {
+    order: 2;
+  }
+
+  .nav-list li {
+    display: inline-block;
+    padding-right: 5px;
+  }
+
+  .nav-list li:last-child {
+    padding-right: 0;
+  }
+
+  .post.content-wrapper {
+    padding-top: 70px;
+  }
+}
+
+@media all and (max-width: 940px) {
+  .company-details {
+    flex-direction: column;
+    line-height: 30px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width : 992px) {
+  .contact {
+    height: 300px;
+  }
+
+  .contact-container {
+    display: none;
+  }
+
+  .contact-2 {
+    display: block;
+  }
+}
+
+@media all and (max-width: 780px) {
+  .carousel-caption h2 span {
+    font-size: 40px;
+  }
+
+  .carousel-caption {
+    top: 15%;
+  }
+
+  .caption {
+    width: 95%;
+  }
+
+  .simplefilter li {
+    padding: 8px 20px;
+    margin-bottom: 10px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .markets-thumbnail {
+    height: 175px;
+  }
+
+  .footer-widget {
+    padding-top: 0;
+  }
+
+  .footer-logo {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: 100%;
+  }
+
+  .footer-owner-msg {
+    display: block;
+  }
+
+  .footer-widget:nth-child(3), .footer-widget:nth-child(4) {
+    padding-top: 50px;
+  }
+
+  #menu-core-capabilities li {
+    text-align: left;
+  }
+
+  .subpage-nav-wrapper {
+    padding-top: 70px;
+    background-color: #efefef;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .hero {
+    height: 250px;
+    padding-top: 70px;
+  }
+
+  .logo {
+    width: 100%;
+  }
+
+  .logo, .logo a, .phone {
+    float: none;
+    text-align: center;
+  }
+
+  h1, h2, h3, h4 {
+    margin-bottom: 15px;
+  }
+
+  .primary-nav {
+    z-index: 5;
+    padding: 0 0 20px 0;
+  }
+
+  .primary-nav li {
+    display: block;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .main-navgation {
+    padding-bottom: 0;
+  }
+
+  .for-mobile-nav {
+    padding: 0;
+  }
+}
+
+@media all and (max-width: 661px) {
+
+  .item, .carousel, .carousel-inner>.item>img {
+    height: 340px;
+  }
+
+  .carousel-caption h2 {
+    line-height: 80%;
+  }
+
+  .carousel-caption h2 span {
+    font-size: 35px;
+  }
+
+  .carousel-caption {
+    top: 12%;
+  }
+
+  .caption {
+    width: 100%;
+  }
+
+  .btn-slider, .caption {
+    font-size: 17px;
+  }
+
+  .call-to-action-text {
+    font-size: 20px;
+  }
+
+  .btn-call-to-action {
+    font-size: 18px;
+  }
+
+  .image-link-box-icon {
+    padding-top: 28%;
+  }
+
+  .markets-thumbnail-headline {
+    font-size: 23px;
+  }
+}
+
+@media all and (max-width: 610px) {
+  .search-result div {
+    width: 100%;
+  }
+
+  .search-result div p {
+    padding-top: 10px;
+  }
+
+  .img-search-result {
+    display: none;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .footer-widget {
+    width: 100% !important;
+    padding-left: 30px;
+    height: auto;
+  }
+
+  .footer-widget:first-child, .footer-widget:nth-child(3) {
+    padding-left: 30px;
+  }
+
+  .footer-widget:nth-child(2) {
+    padding-top: 30px;
+  }
+
+  .footer-input,
+  input[type="email"].footer-input,
+  textarea.footer-input,
+  input[type="submit"].footer-form-submit {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .quote-input-wrapper {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media all and (max-width: 551px) {
+  .carousel-caption h2 span {
+    font-size: 28px;
+  }
+
+  .carousel-caption h2 {
+    line-height: 50%;
+  }
+
+  .image-link-box-icon {
+    padding-top: 26%;
+  }
+
+  .markets-thumbnail {
+    height: 134px;
+  }
+
+  .team-member {
+    width: 100%;
+  }
+
+  .team-headshot {
+    width: 58%;
+  }
+
+  .alignleft, .alignright {
+    margin: 30px 0 20px;
+    float: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .markets-thumbnail {
+    height: 140px;
+  }
+
+  .showpage-title {
+    font-size: 16px;
+  }
+}
+
+@media all and (max-width: 530px) {
+  .showpage-snippet-excerpt {
+    font-size: 13px;
+  }
+
+  .pfg-img {
+    height: 150px !important;
+  }
+}
+
+@media all and (max-width: 440px) {
+  .hero {
+    height: 220px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+    line-height: 33px;
+    margin-bottom: 10px;
+  }
+  .team-headshot {
+    height: 210px;
+  }
+
+  .item, .carousel, .carousel-inner>.item>img {
+    height: 320px;
+  }
+
+  .caption {
+    padding: 6px 6px 20px 0;
+  }
+
+  .carousel-caption h2 span {
+    font-size: 23px;
+  }
+
+  p.caption {
+    line-height: 20px;
+    font-size: 16px;
+  }
+
+  .image-link-box-icon {
+    padding-top: 29%;
+  }
+
+  .showpage-snippet {
+    width: 100%;
+  }
+
+  .markets-thumbnail {
+    height: 120px;
+  }
+
+  .showpage-thumbnail {
+    height: 200px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .markets-thumbnail-headline {
+    font-size: 18px;
+  }
+}
