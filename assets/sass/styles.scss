@@ -42,9 +42,6 @@ NAVIGATION: css menus can be great for breaking up your code into modules as wel
 1.1 VARIABLES
 --------------------------------*/
 
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700');
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
-
 $cream: #f1f1f1;
 $denim: #0977bc;
 $leaf: #8dc641;
@@ -54,6 +51,52 @@ $ash: #333;
 $smoke: #666;
 $image_path: "../../img/";
 $video_path: "../../video/";
+$font_path: "../../fonts/";
+$montReg: "montserratRegular";
+$montBold: "montserratbold";
+$lato: "latoregular";
+$latoItalic: "latoitalic";
+$latoBold: "latobold";
+
+@font-face {
+  font-family: 'montserratRegular';
+  src: url('#{$font_path}montserrat-regular-webfont.woff2') format('woff2'),
+       url('#{$font_path}montserrat-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'montserratbold';
+  src: url('#{$font_path}montserrat-bold-webfont.woff2') format('woff2'),
+       url('#{$font_path}montserrat-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'latobold';
+  src: url('#{$font_path}lato-bold-webfont.woff2') format('woff2'),
+       url('#{$font_path}lato-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'latoitalic';
+  src: url('#{$font_path}lato-italic-webfont.woff2') format('woff2'),
+       url('#{$font_path}lato-italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'latoregular';
+  src: url('#{$font_path}lato-regular-webfont.woff2') format('woff2'),
+       url('#{$font_path}lato-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /*--------------------------------
 1.2 MIXINS
@@ -236,6 +279,8 @@ $video_path: "../../video/";
 body {
   background-color: $cream;
   box-sizing: border-box;
+  font-size: 18px;
+  font-family: $lato;
 }
 
 h1, h2, h3, h4 {
@@ -281,6 +326,15 @@ a:hover {
 
 .header {
   background-color: $ash;
+  padding: 20px 0;
+}
+
+.header-info {
+  float: right;
+}
+
+.header-info li {
+  display: inline-block;
 }
 
 .hamburger {
