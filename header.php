@@ -22,11 +22,12 @@
             $custom_logo_id = get_theme_mod( 'custom_logo' );
             $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
             ?>
-
-            <img
-              class="logo"
-              src="<?php echo $logo[0]; ?>"
-              alt="<?php echo get_option('companyname'); ?> logo">
+              <a href="<?php echo get_home_url(); ?>">
+                <img
+                  class="logo"
+                  src="<?php echo $logo[0]; ?>"
+                  alt="<?php echo get_option('companyname'); ?> logo">
+              </a>
 
             <?php get_template_part('header/header-info') ?>
 
