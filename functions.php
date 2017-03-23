@@ -50,8 +50,8 @@ add_action('wp_enqueue_scripts', 'theme_js' );
 
 
 // custom post type
-add_action('init', 'create_core_lawyer_post_type');
-function create_core_capability_post_type() {
+add_action('init', 'create_lawyer_post_type');
+function create_lawyer_post_type() {
   register_post_type(
     'lawyer',
     array(
