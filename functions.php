@@ -82,6 +82,14 @@ function add_gcf_interface() {
 	add_options_page('Company Details', 'Company Details', 'manage_options', 'company-details', 'editcompanydetails');
 }
 
+function get_court_house(){
+  echo '<div class="col-sm-12 text-center court-house">' .
+          '<span></span>' .
+          '<i class="fa fa-university" aria-hidden="true"></i>' .
+          '<span></span>' .
+        '</div>';
+}
+
 function editcompanydetails() {
 	?>
 	<div class='wrap'>

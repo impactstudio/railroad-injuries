@@ -5,10 +5,12 @@
   </li>
   <li class="phone">
     <small class="block">IF YOU OR A LOVED ONE ARE INJURED - CALL US</small>
-    <i class="fa fa-phone denim pull-left"></i>
-    <a href="tel:+1<?php echo remove_special_chars(get_option('phonenumber')); ?>">
-      <?php echo get_option('phonenumber'); ?>
-    </a>
+    <span>
+      <i class="fa fa-phone denim pull-left"></i>
+      <a href="tel:+1<?php echo remove_special_chars(get_option('phonenumber')); ?>">
+        <?php echo get_option('phonenumber'); ?>
+      </a>
+    </span>
   </li>
   <li class="social">
     <?php if (get_option('facebook')): ?>

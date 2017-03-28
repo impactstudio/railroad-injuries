@@ -121,6 +121,13 @@ $latoBold: "latobold";
   transition: $prop, $duration;
 }
 
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
 /*--------------------------------
 1.3 REUSABLES
 --------------------------------*/
@@ -141,6 +148,21 @@ $latoBold: "latobold";
 
 .justify {
   text-align: justify;
+}
+
+.flex-center {
+  @extend .flexbox;
+  align-items: center;
+}
+
+.table-container {
+  display: table;
+  height: 100%;
+}
+
+.vertical-align {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .center-children { /* must use flexbox */
@@ -227,6 +249,20 @@ $latoBold: "latobold";
 
 .icon-cream {
   color: $cream;
+}
+
+.court-house {
+  font-size: 25px;
+  color: $smoke;
+  span {
+    display: inline-block;
+    margin-bottom: 5px;
+    width: 100px;
+    border: 1px solid $smoke;
+  }
+  i {
+    margin-left: 1px;
+  }
 }
 
 /* image link hover box */
@@ -479,7 +515,6 @@ ul#menu-primary-nav .nav-consultation a {
   background-size: cover;
   color: white;
   position: relative;
-  height: 602px;
 }
 
 .hero h1 {
@@ -492,9 +527,41 @@ ul#menu-primary-nav .nav-consultation a {
 
 .hero-content {
   height: 100%;
-  @extend .flexbox;
-  align-items: center;
+  // @extend .flexbox;
+  // align-items: center;
 }
+
+.form-wrapper {
+  @include placeholder {
+    color: white;
+  }
+  background-color: $ash;
+  padding: 30px;
+  font-family: $montReg;
+}
+
+.form-wrapper hr {
+  border-top: 3px solid $smoke;
+}
+
+.form-wrapper input,
+.form-wrapper textarea {
+  border-radius: 0;
+  color: white;
+  font-size: 20px;
+  background-color: $denim;
+  border: none;
+}
+
+.form-wrapper textarea {
+  height: 150px;
+}
+
+.btn.btn-primary {
+  background-color: $smoke;
+}
+
+// Cases Section
 
 /*--------------------------------
 4.0 SIDEBAR
@@ -658,7 +725,8 @@ footer {
 
 .hero h1 {
   font-weight: bold;
-  font-size: 46px;
+  font-size: 41px;
+  margin-top: 20%;
 }
 
 .hero-image {

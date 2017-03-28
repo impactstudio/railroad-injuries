@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
-<main class="container-fluid">
+<main>
   <?php get_template_part('home/hero'); ?>
+  <?php get_template_part('home/cases'); ?>
 </main>
 
 <?php get_footer(); ?>
