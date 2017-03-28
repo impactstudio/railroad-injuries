@@ -1,5 +1,5 @@
 <!-- layout: use this for properly layout in include files where necessary -->
-<section class="hero content-wrapper">
+<section class="hero banner-wrapper">
   <div class="black-overlay"></div>
   <div class="container">
     <div class="row">
