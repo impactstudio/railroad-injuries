@@ -8,6 +8,7 @@ add_theme_support( 'html5');
 add_theme_support( 'menus' );
 add_theme_support( 'custom-logo' );
 add_theme_support( 'gallery' );
+add_theme_support( 'post-thumbnails' ); 
 // different ways of showing post content
 // add_theme_support( 'post-formats', array('video', 'aside', 'gallery', 'image'));
 

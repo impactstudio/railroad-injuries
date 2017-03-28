@@ -3,7 +3,7 @@
 
   if (have_posts()) : while (have_posts()) : the_post();
 
-    if ( get_post_type() == 'post' || get_post_type() == 'markets' || get_post_type() == 'capability' ) {
+    if ( get_post_type() == 'post' ) {
 
      get_template_part('post/layout');
 
@@ -11,7 +11,7 @@
 
       get_template_part('fullwidth/layout');
 
-    } else {
+    } elseif (is_page_template('page-subpage.php')) {
 
       get_template_part('page/layout');
 

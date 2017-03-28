@@ -1,4 +1,4 @@
-// Print styles
+// boostrap sass node_module
 
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
@@ -150,6 +150,14 @@ $latoBold: "latobold";
   text-align: justify;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
 .flex-center {
   @extend .flexbox;
   align-items: center;
@@ -157,6 +165,10 @@ $latoBold: "latobold";
 
 .table-container {
   display: table;
+  height: 100%;
+}
+
+.full-height {
   height: 100%;
 }
 
@@ -333,6 +345,30 @@ $latoBold: "latobold";
   padding-bottom: 42.5px;
 }
 
+// z-indexes
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-1 {
+  @extend .absolute;
+  z-index: 1;
+}
+
+.z-2 {
+  @extend .relative;
+  z-index: 2;
+}
+
 /* end image link hover box */
 
 /*--------------------------------
@@ -352,11 +388,13 @@ body {
 
 h1, h2, h3, h4 {
   margin-top: 0;
+  font-family: $montReg;
 }
 
 p {
   line-height: 27px;
   margin-bottom: 20px;
+  font-family: $lato;
 }
 
 i {}
@@ -567,11 +605,41 @@ ul#menu-primary-nav .nav-consultation a {
   background-color: $smoke;
 }
 
+.btn.btn-secondary {
+  background-color: $denim;
+}
+
 // Cases Section
 
 /*--------------------------------
 4.0 SIDEBAR
 --------------------------------*/
+
+.sidebar .sidebar-headline {
+  border-bottom: 2px solid $denim;
+  color: $ash;
+  font-family: $montReg;
+  padding-bottom: 10px;
+  font-size: 30px;
+}
+
+.sidebar-form {
+  @extend .form-wrapper;
+  padding: 0;
+  background-color: transparent;
+}
+
+.sidebar-form input, .sidebar-form textarea {
+  background-color: $ash;
+}
+
+.sidebar-form.btn.btn-submit {
+  background-color: $denim;
+}
+
+.sidebar-widget-wrapper {
+  margin-bottom: 40px;
+}
 
 /*--------------------------------
 5.0 FOOTER
@@ -749,6 +817,15 @@ footer {
 .breadcrumbs {
   font-size: 16px;
   padding: 25px 0;
+  color: white;
+}
+
+.breadcrumbs span a {
+  color: $denim;
+}
+
+.breadcrumbs span a:hover {
+  color: $leaf;
 }
 
 .thumbnail {
@@ -828,6 +905,29 @@ footer {
 10.0 SUBPAGE - MARKETS, CORE CAPABILITIES
 --------------------------------*/
 
+.subpage-hero {
+  width: 100%;
+  position: relative;
+}
+
+.subpage-hero, .subpage-hero-content {
+  height: 300px;
+}
+
+.subpage-hero-content {
+  @extend .flexbox;
+  justify-content: center;
+  //justify-content handles vertical alignment for flexbox
+  @extend .flex-col;
+  color: white;
+}
+
+.subpage-hero-content h1 {
+  font-family: $montBold;
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
 .subpage, .subpage-nav {
   height: 100%;
 }
@@ -869,6 +969,10 @@ footer {
   color: $denim;
 }
 
+.img-featured {
+  margin-bottom: 30px;
+}
+
 .additional-media {
   height: 350px;
   padding-bottom: 30px;
@@ -894,9 +998,12 @@ footer {
   margin: 10px 30px 10px 0;
 }
 
-.post h1, .post h2, .post h3, .post h4, .post h5 {
-  color: $denim;
-  margin-bottom: 20px;
+.subpage h1,
+.subpage h2,
+.subpage h3,
+.subpage h4,
+.subpage p {
+  margin-bottom: 25px;
 }
 
 .post a {
