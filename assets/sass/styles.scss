@@ -1,6 +1,6 @@
-// customize bootstrap variables here:
-@import "variables";
-@import "bootstrap";
+// Print styles
+
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
 /*******************
 NAVIGATION: css menus can be great for breaking up your code into modules as well as helping you quickly navigate to a page/sections styles via cmd+f
@@ -49,9 +49,9 @@ $cloudy: #e4e4e4;
 $dark: #222;
 $ash: #333;
 $smoke: #666;
-$image_path: "../../img/";
-$video_path: "../../video/";
-$font_path: "../../fonts/";
+$image_path: "../img/";
+$video_path: "../video/";
+$font_path: "../fonts/";
 $montReg: "montserratRegular";
 $montBold: "montserratbold";
 $lato: "latoregular";
@@ -516,7 +516,6 @@ ul#menu-primary-nav .nav-consultation a {
 // HERO
 
 .hero {
-  background: url("#{$image_path}bg_railroad-injuries-railroad-accidents-fela.jpg") center top -190px no-repeat;
   background-size: cover;
   color: white;
   position: relative;

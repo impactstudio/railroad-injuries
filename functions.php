@@ -23,7 +23,7 @@ add_action( 'after_setup_theme', 'wpt_setup' );
 // styles and scripts
 function theme_styles() {
 	wp_enqueue_style( 'wpb-fa', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
-	wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/assets/build/css/styles.css' );
+	wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/assets/css/styles.css' );
 	wp_enqueue_style('print_css', get_template_directory_uri() . '/assets/css/print.css' );
   wp_enqueue_style('animate_css', get_template_directory_uri() . '/assets/css/animate.min.css' );
 }
