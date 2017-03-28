@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/impactstudio/railroad-injuries#readme",
   "dependencies": {
+    "bootstrap-sass": "^3.3.7",
     "node-sass": "^4.5.0"
   }
 }
