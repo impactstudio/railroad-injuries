@@ -15,7 +15,7 @@
       </div>
       <div class="col-md-4">
         <div class="form-wrapper">
-          <h3 class="text-center">Recently been innjured?</h3>
+          <h3 class="text-center">Recently been injured?</h3>
           <h3 class="text-center">Tell us about your case.</h3>
           <hr>
           <form>
