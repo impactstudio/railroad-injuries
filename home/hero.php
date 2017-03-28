@@ -31,9 +31,7 @@
             <div class="form-group">
               <textarea class="form-control" name="" id="" cols="30" rows="10" placeholder="Give us a brief description of your case"></textarea>
             </div>
-            <div class="form-group">
-              <input type="submit" class="btn btn-primary">
-            </div>
+            <input type="submit" class="btn btn-primary">
           </form>
         </div>
       </div>
