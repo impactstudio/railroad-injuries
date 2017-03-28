@@ -122,10 +122,10 @@ $latoBold: "latobold";
 }
 
 @mixin placeholder {
-  ::-webkit-input-placeholder {@content}
-  :-moz-placeholder           {@content}
-  ::-moz-placeholder          {@content}
-  :-ms-input-placeholder      {@content}
+  ::-webkit-input-placeholder {@content};
+  :-moz-placeholder           {@content};
+  ::-moz-placeholder          {@content};
+  :-ms-input-placeholder      {@content};
 }
 
 /*--------------------------------
@@ -191,48 +191,24 @@ $latoBold: "latobold";
   padding-bottom: 70px;
 }
 
-.btn-black {
-  background-color: $ash;
-  color: $cream;
-  border-radius: 0;
-  padding: 6px 16px;
-  @include transition(ease-out, 0.5s);
+.btn.btn-primary {
+  background-color: $smoke;
 }
 
-.btn-black:hover {
+.btn.btn-primary:hover {
+  color: white;
   background-color: $denim;
-  color: $cream;
-  @include transition(ease-in, 0.5s);
+  @include transition(ease, .3s);
 }
 
-.btn-denim {
+.btn.btn-secondary {
   background-color: $denim;
-  color: $cream;
-  border-radius: 0;
-  padding: 6px 16px;
-  font-size: 22px;
-  @include transition(ease-out, 0.5s);
 }
 
-.btn-denim:hover {
+.btn.btn-secondary:hover {
+  color: white;
   background-color: $ash;
-  color: $cream;
-  @include transition(ease-in, 0.5s);
-}
-
-.btn-ash {
-  background-color: $ash;
-  color: $cream;
-  border-radius: 0;
-  padding: 6px 16px;
-  font-size: 22px;
-  @include transition(ease-out, 0.5s);
-}
-
-.btn-pumpkin:hover {
-  background-color: $denim;
-  color: $cream;
-  @include transition(ease-in, 0.5s);
+  @include transition(ease, .3s);
 }
 
 .main-headline {
@@ -599,14 +575,6 @@ ul#menu-primary-nav .nav-consultation a {
 
 .form-wrapper textarea {
   height: 150px;
-}
-
-.btn.btn-primary {
-  background-color: $smoke;
-}
-
-.btn.btn-secondary {
-  background-color: $denim;
 }
 
 // Cases Section

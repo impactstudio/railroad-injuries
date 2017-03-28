@@ -14,8 +14,8 @@
   <div class="container">
     <div class="row">
       <div class="subpage-hero-content z-2">
-        <h1>Knowing your rights under FELA</h1>
-        <p class="lead">How understanding your FELA rights can help your case</p>
+        <h1><?php the_title(); ?></h1>
+        <p class="lead"><?php echo $hero_description; ?></p>
       </div>
     </div>
   </div>
