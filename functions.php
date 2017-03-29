@@ -49,24 +49,6 @@ function theme_js() {
 
 add_action('wp_enqueue_scripts', 'theme_js' );
 
-// Cases
-add_action('init', 'create_case_post_type');
-function create_case_post_type() {
-  register_post_type(
-    'case',
-    array(
-      'labels'      => array(
-        'name'          => __('Cases'),
-        'singular_name' => __('case')
-      ),
-      'public'      => true,
-      'has_archive' => false,
-      'rewrite'     => array('slug' => 'case'),
-      'supports'    => array('title', 'custom-fields', 'editor', 'thumbnail')
-    )
-  );
-}
-
 
 // lawyer
 add_action('init', 'create_lawyer_post_type');

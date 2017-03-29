@@ -7,4 +7,8 @@
   <!-- The Loop -->
   <?php get_template_part( 'sidebar_widgets' ); ?>
 
+  <div class="widget">
+    <h4>Our Attorneys</h4>
+    <?php get_template_part('sidebar/lawyers'); ?>
+  </div>
 </aside>

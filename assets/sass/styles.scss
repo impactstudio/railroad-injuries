@@ -17,7 +17,7 @@ NAVIGATION: css menus can be great for breaking up your code into modules as wel
 
 3.0 HOME
 
-4.0 SIDEBAR
+4.0 SIDEBAR, LAWYER SIDEBAR
 
 5.0 FOOTER
 
@@ -26,15 +26,9 @@ NAVIGATION: css menus can be great for breaking up your code into modules as wel
 
 7.0 FULLWIDTH TEMPLATE
 
-8.0 SHOWPAGE TEMPLATE
+8.0 SUBPAGE TEMPLATE, SEARCH
 
-9.0 TEAM TEMPLATE
-
-10.0 SUBPAGE - MARKETS, CORE CAPABILITIES, SEARCH
-
-11.0 PORTFOLIO
-
-12.0 MEDIA QUERIES
+9.0 MEDIA QUERIES
 
 ********************/
 
@@ -180,6 +174,10 @@ $latoBold: "latobold";
 .center-children { /* must use flexbox */
   justify-content: space-between;
   align-items: center;
+}
+
+.img-responsive {
+  width: 100%;
 }
 
 .wrap {
@@ -347,6 +345,11 @@ $latoBold: "latobold";
 
 /* end image link hover box */
 
+.desaturate-zoom {
+  filter: grayscale(100%);
+  transform: scale(1.02);
+}
+
 /*--------------------------------
 1.4 DEFAULT
 --------------------------------*/
@@ -408,6 +411,51 @@ a:hover {
 /*--------------------------------
 1.5 FORMS
 --------------------------------*/
+
+// hero form
+
+.form-wrapper {
+  @include placeholder {
+    color: white;
+  }
+  background-color: $ash;
+  padding: 30px;
+  font-family: $montReg;
+}
+
+.form-wrapper hr {
+  border-top: 3px solid $smoke;
+}
+
+.form-wrapper input,
+.form-wrapper textarea {
+  border-radius: 0;
+  color: white;
+  font-size: 20px;
+  background-color: $denim;
+  border: none;
+}
+
+.form-wrapper textarea {
+  height: 150px;
+}
+
+// sidebar form
+
+.sidebar-form {
+  @extend .form-wrapper;
+  padding: 0;
+  background-color: transparent;
+}
+
+.sidebar-form input,
+.sidebar-form textarea {
+  background-color: $ash;
+}
+
+.sidebar-form.btn.btn-submit {
+  background-color: $denim;
+}
 
 /*--------------------------------
 2.0 HEADER
@@ -555,32 +603,6 @@ ul#menu-primary-nav .nav-consultation a {
   // align-items: center;
 }
 
-.form-wrapper {
-  @include placeholder {
-    color: white;
-  }
-  background-color: $ash;
-  padding: 30px;
-  font-family: $montReg;
-}
-
-.form-wrapper hr {
-  border-top: 3px solid $smoke;
-}
-
-.form-wrapper input,
-.form-wrapper textarea {
-  border-radius: 0;
-  color: white;
-  font-size: 20px;
-  background-color: $denim;
-  border: none;
-}
-
-.form-wrapper textarea {
-  height: 150px;
-}
-
 // Cases Section
 
 .cases .col-sm-12 {
@@ -629,7 +651,7 @@ ul#menu-primary-nav .nav-consultation a {
 4.0 SIDEBAR
 --------------------------------*/
 
-aside.sidebar h4 {
+aside.sidebar h4, aside.sidebar h1 {
   border-bottom: 2px solid $denim;
   color: $ash;
   font-family: $montReg;
@@ -637,19 +659,18 @@ aside.sidebar h4 {
   font-size: 30px;
 }
 
-.sidebar-form {
-  @extend .form-wrapper;
-  padding: 0;
-  background-color: transparent;
+aside.sidebar h5 {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 5px;
 }
 
-.sidebar-form input,
-.sidebar-form textarea {
-  background-color: $ash;
+aside.sidebar h5 a {
+  color: $denim;
 }
 
-.sidebar-form.btn.btn-submit {
-  background-color: $denim;
+aside.sidebar h5 a:hover {
+  color: $leaf;
 }
 
 .widget {
@@ -668,17 +689,31 @@ aside.sidebar h4 {
   color: $leaf;
 }
 
+.sidebar-lawyer {
+  width: 50%;
+  border-radius: 180px;
+  display: block;
+  margin: 0 auto;
+  @include transition(ease-out, .3s);
+}
+
+img.sidebar-lawyer:hover {
+  @extend .desaturate-zoom;
+  @include transition(ease-in, .3s);
+}
+
+p.role {
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+}
+
 /*--------------------------------
 5.0 FOOTER
 --------------------------------*/
 
 footer {
   color: $cream;
-}
-
-.bg-footer {
-  background: url("#{$image_path}bg_footer.jpg") center top no-repeat;
-  background-size: cover;
 }
 
 .footer-widget {
@@ -714,30 +749,6 @@ footer {
   display: block;
 }
 
-/* footer nav widget */
-
-#menu-core-capabilities {
-  background-color: transparent;
-  margin-top: 0;
-}
-
-#menu-core-capabilities, #menu-core-capabilities li, .footer-external-links li {
-  display: block;
-  color: $cream;
-  text-align: left;
-}
-
-#menu-core-capabilities, .footer-external-links, .footer-external-links li a {
-  padding: 0;
-}
-
-#menu-core-capabilities li, .footer-external-links li {
-  border-right: 0;
-  padding: 0;
-  line-height: 30px;
-  list-style: none;
-}
-
 .footer-icon {
   padding-right: 5px;
 }
@@ -747,7 +758,7 @@ footer {
 }
 
 .footer-widget h4 {
-  font-size: 20px;
+  font-size: 1.2em;
   display: inline-block;
   color: $cream;
   border-bottom: 3px solid;
@@ -817,7 +828,7 @@ footer {
 --------------------------------*/
 
 /*--------------------------------
-8.0 SHOWPAGE TEMPLATE
+8.0 SUBPAGE TEMPLATE
 --------------------------------*/
 
 .hero .black-overlay {
@@ -842,7 +853,7 @@ footer {
 }
 
 .breadcrumbs {
-  font-size: 16px;
+  font-size: .9em;
   padding: 25px 0;
   color: white;
 }
@@ -893,44 +904,6 @@ footer {
   text-align: justify;
   font-size: 18px;
 }
-
-/*--------------------------------
-9.0 TEAM TEMPLATE
---------------------------------*/
-
-.team {
-  text-align: center;
-}
-
-.team-headshot {
-  display: block;
-  width: 100%;
-  height: 263px;
-  margin: 0 auto 20px auto;
-}
-
-.team-member-name {
-  color: $denim;
-  font-size: 22px;
-  margin-bottom: 5px;
-}
-
-.team-member-role {
-  font-weight: bold;
-  font-size: 12px;
-  display: inline-block;
-  margin-bottom: 10px;
-}
-
-.team-member-quote {
-  font-weight: 200;
-  margin-bottom: 0;
-  line-height: 23px;
-}
-
-/*--------------------------------
-10.0 SUBPAGE - MARKETS, CORE CAPABILITIES
---------------------------------*/
 
 .subpage-hero {
   width: 100%;
@@ -1082,7 +1055,7 @@ footer {
 }
 
 /*--------------------------------
-12.0 MEDIA QUERIES
+9.0 MEDIA QUERIES
 --------------------------------*/
 
 @media all and (min-width: 1440px) {
