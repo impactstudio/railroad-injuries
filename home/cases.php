@@ -13,7 +13,7 @@
 
       <?php get_court_house(); ?> <!-- Remember that the court house funciton returns a col-sm-12 -->
 
-      <div class="col-sm-12">
+      <div class="col-sm-12 text-center">
         <h2><?php echo $cases_header; ?></h2>
         <p><?php echo $cases_subheader; ?></p>
       </div>

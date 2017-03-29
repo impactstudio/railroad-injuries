@@ -583,24 +583,46 @@ ul#menu-primary-nav .nav-consultation a {
 
 // Cases Section
 
+.cases .col-sm-12 {
+  margin: 25px 0;
+}
+
+.cases .col-sm-12 h2 {
+  color: $denim;
+  font-weight: 700;
+}
+
 .cases .col-sm-3 {
   position: relative;
 }
 
 .cases .col-sm-3 img {
   min-height: 180px;
+  transition: .3s;
+  filter: grayscale(1);
+}
+
+.cases .col-sm-3:hover img, {
+  filter: grayscale(0);
+  transition: .3s;
 }
 
 .cta-banner-wrapper {
-    background: #666;
-    color: white;
-    padding: 15px 9px 5px;
-    max-width: 250px;
-    min-width: 250px;
-    position: absolute;
-    bottom: -35px;
-    left: 25px;
-    border-bottom: 5px solid $leaf;
+  background: #666;
+  color: white;
+  padding: 15px 9px 5px;
+  max-width: 250px;
+  min-width: 250px;
+  position: absolute;
+  bottom: -35px;
+  left: 25px;
+  border-bottom: 5px solid $denim;
+  transition: .3s;
+}
+
+.cases .col-sm-3:hover .cta-banner-wrapper {
+  border-bottom: 5px solid $leaf;
+  transition: .3s;
 }
 
 /*--------------------------------
