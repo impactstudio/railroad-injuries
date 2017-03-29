@@ -583,7 +583,7 @@ ul#menu-primary-nav .nav-consultation a {
 4.0 SIDEBAR
 --------------------------------*/
 
-.sidebar .sidebar-headline {
+aside.sidebar h4 {
   border-bottom: 2px solid $denim;
   color: $ash;
   font-family: $montReg;
@@ -597,7 +597,8 @@ ul#menu-primary-nav .nav-consultation a {
   background-color: transparent;
 }
 
-.sidebar-form input, .sidebar-form textarea {
+.sidebar-form input,
+.sidebar-form textarea {
   background-color: $ash;
 }
 
@@ -605,8 +606,20 @@ ul#menu-primary-nav .nav-consultation a {
   background-color: $denim;
 }
 
-.sidebar-widget-wrapper {
+.widget {
   margin-bottom: 40px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li a {
+  color: $denim;
+}
+
+.sidebar ul li a:hover {
+  color: $leaf;
 }
 
 /*--------------------------------

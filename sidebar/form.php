@@ -1,4 +1,3 @@
-<h3 class="sidebar-headline">Contact Us</h3>
 <form class="sidebar-form">
   <div class="form-group">
     <input type="text" class="form-control" placeholder="Full Name">
