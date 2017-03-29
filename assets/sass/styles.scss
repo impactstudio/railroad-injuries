@@ -356,6 +356,8 @@ $latoBold: "latobold";
 
 * {
   box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -654,7 +656,7 @@ ul#menu-primary-nav .nav-consultation a {
 aside.sidebar h4, aside.sidebar h1 {
   border-bottom: 2px solid $denim;
   color: $ash;
-  font-family: $montReg;
+  font-family: $montBold;
   padding-bottom: 10px;
   font-size: 30px;
 }
