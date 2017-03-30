@@ -7,15 +7,15 @@
 
       get_template_part('post/layout');
 
-   } elseif ( get_post_type() == 'lawyer') {
+    } elseif ( get_post_type() == 'lawyer') {
 
      get_template_part('lawyer/layout');
 
-   } elseif (is_page_template('page-fullwidth.php')) {
+    } elseif (is_page_template('page-fullwidth.php')) {
 
       get_template_part('fullwidth/layout');
 
-   } elseif (is_page_template('page-subpage.php')) {
+    } elseif (is_page_template('page-subpage.php')) {
 
       get_template_part('page/layout');
 

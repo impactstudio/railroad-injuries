@@ -46,11 +46,11 @@ $smoke: #666;
 $image_path: "../img/";
 $video_path: "../video/";
 $font_path: "../fonts/";
-$montReg: "montserratRegular";
-$montBold: "montserratbold";
-$lato: "latoregular";
-$latoItalic: "latoitalic";
-$latoBold: "latobold";
+$montReg: "montserratRegular", Helvetica;
+$montBold: "montserratbold", Helvetica;
+$lato: "latoregular", Helvetica;
+$latoItalic: "latoitalic", Helvetica;
+$latoBold: "latobold", Helvetica;
 
 @font-face {
   font-family: 'montserratRegular';
@@ -1419,6 +1419,7 @@ footer {
 
   h1, h2, h3, h4 {
     margin-bottom: 15px;
+    font-family: $montBold;
   }
 
   .primary-nav {
