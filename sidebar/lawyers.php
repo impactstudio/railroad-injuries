@@ -15,10 +15,10 @@ $lawyers = new WP_Query($args);
       src="<?php the_post_thumbnail_url(); ?>"
       alt="<?php the_title(); ?>">
   </a>
-  <h5>
+  <h5 class="attorney-name">
     <a href="<?php the_permalink(); ?>">
       <?php the_title(); ?>
     </a>
   </h5>
-  <p class="role">President of RVPC</p>
+  <p class="attorney-role">President of RVPC</p>
 <?php endwhile; endif; ?>

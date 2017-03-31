@@ -371,7 +371,10 @@ body {
   font-family: $lato;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   margin-top: 0;
   font-family: $montReg;
 }
@@ -469,7 +472,7 @@ a:hover {
 }
 
 .header-info li,
-.header-info li a {
+.header-link {
   color: white;
   list-style: none;
   font-size: 16px;
@@ -491,13 +494,13 @@ a:hover {
   padding-top: 5px;
 }
 
-li.phone a {
+.phone-number {
   font-size: 2.2em;
   font-family: $montReg;
   letter-spacing: -1px;
 }
 
-.header-info li.social i {
+.header-social-icon {
   padding-right: 15px;
 }
 
@@ -653,7 +656,8 @@ ul#menu-primary-nav .nav-consultation a {
 4.0 SIDEBAR
 --------------------------------*/
 
-aside.sidebar h4, aside.sidebar h1 {
+.sidebar-headline,
+.sidebar h4 /* wordpress override */ {
   border-bottom: 2px solid $denim;
   color: $ash;
   font-family: $montBold;
@@ -661,17 +665,17 @@ aside.sidebar h4, aside.sidebar h1 {
   font-size: 30px;
 }
 
-aside.sidebar h5 {
+.attorney-name {
   text-align: center;
   font-size: 1.2em;
   margin-bottom: 5px;
 }
 
-aside.sidebar h5 a {
+.attorney-name a {
   color: $denim;
 }
 
-aside.sidebar h5 a:hover {
+.attorney-name a:hover {
   color: $leaf;
 }
 
@@ -680,7 +684,7 @@ aside.sidebar h5 a:hover {
 }
 
 .sidebar ul {
-  list-style: none;
+  @extend .list-unstyled;
 }
 
 .sidebar ul li a {
@@ -692,19 +696,19 @@ aside.sidebar h5 a:hover {
 }
 
 .sidebar-lawyer {
+  @extend .img-circle;
   width: 50%;
-  border-radius: 180px;
   display: block;
   margin: 0 auto;
   @include transition(ease-out, .3s);
 }
 
-img.sidebar-lawyer:hover {
+.sidebar-lawyer:hover {
   @extend .desaturate-zoom;
   @include transition(ease-in, .3s);
 }
 
-p.role {
+.attorney-role {
   font-size: 14px;
   font-style: italic;
   text-align: center;
