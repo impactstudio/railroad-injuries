@@ -184,6 +184,10 @@ $latoBold: "latobold", Helvetica;
   flex-wrap: wrap;
 }
 
+.no-wrap {
+  flex-wrap: nowrap;
+}
+
 .content-wrapper {
   padding-top: 70px;
   padding-bottom: 70px;
@@ -463,6 +467,10 @@ a:hover {
 .header {
   background-color: $ash;
   padding: 22px 0;
+}
+
+.header-info {
+  flex-wrap: wrap;
 }
 
 .header-info li,
@@ -1071,6 +1079,21 @@ footer {
   }
 }
 
+@media all and (max-width: 1200px) {
+  .header-wrapper {
+    display: block;
+  }
+
+  .logo {
+    display: block;
+    margin: 0 auto 20px auto;
+  }
+
+  .header-info {
+    justify-content: flex-start;
+  }
+}
+
 @media all and (min-width: 1650px) {
   .carousel-caption {
     left: 20%;
@@ -1186,10 +1209,6 @@ footer {
     margin-bottom: 15px;
   }
 
-  .flexbox {
-    flex-direction: column;
-  }
-
   p:last-child {
     margin-bottom: 20px;
   }
@@ -1197,6 +1216,23 @@ footer {
   .credential:first-child {
     border-right: 0;
     font-size: 20px;
+  }
+
+  .header-info {
+    flex-direction: column;
+  }
+
+  .header-info li {
+    border-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .phone small {
+    text-align: center;
+  }
+
+  .fela {
+    display: none;
   }
 
   .certified-info {
