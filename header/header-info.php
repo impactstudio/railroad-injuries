@@ -14,19 +14,19 @@
   </li>
   <li class="social">
     <?php if (get_option('facebook')): ?>
-      <a class="header-link" href="<?php echo get_option('facebook'); ?>">
+      <a target="_blank" class="header-link" href="<?php echo get_option('facebook'); ?>">
         <i class="fa fa-facebook-square header-social-icon"></i>
       </a>
     <?php endif; ?>
 
     <?php if (get_option('google')): ?>
-      <a class="header-link" href="<?php echo get_option('google'); ?>">
+      <a target="_blank" class="header-link" href="<?php echo get_option('google'); ?>">
         <i class="fa fa-google-plus-square header-social-icon"></i>
       </a>
     <?php endif; ?>
 
     <?php if (get_option('linkedin')): ?>
-      <a class="header-link" href="<?php echo get_option('linkedin'); ?>">
+      <a target="_blank" class="header-link" href="<?php echo get_option('linkedin'); ?>">
         <i class="fa fa-linkedin-square header-social-icon"></i>
       </a>
     <?php endif; ?>

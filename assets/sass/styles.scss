@@ -1205,6 +1205,7 @@ footer {
   .company-details {
     font-size: 9px;
   }
+
   .logo {
     margin-bottom: 15px;
   }
@@ -1225,6 +1226,10 @@ footer {
   .header-info li {
     border-right: 0;
     margin-bottom: 20px;
+  }
+
+  .header-info li:last-child {
+    margin-bottom: 0px;
   }
 
   .phone small {
