@@ -15,7 +15,7 @@
 
       get_template_part('fullwidth/layout');
 
-    } elseif (is_page_template('page-subpage.php')) {
+    } else {
 
       get_template_part('page/layout');
 
