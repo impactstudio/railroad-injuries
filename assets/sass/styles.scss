@@ -608,21 +608,34 @@ ul#menu-primary-nav .nav-consultation a {
 }
 
 .cta-banner-wrapper {
-  background: #666;
-  color: white;
-  padding: 15px 9px 5px;
-  max-width: 250px;
-  min-width: 250px;
-  position: absolute;
-  bottom: -35px;
-  left: 25px;
-  border-bottom: 5px solid $denim;
-  transition: .3s;
+    background: #666;
+    color: white;
+    padding: 15px 9px 5px;
+    max-width: 250px;
+    min-width: 250px;
+    position: absolute;
+    bottom: -35px;
+    left: 22px;
+    min-height: 88px;
+    border-bottom: 5px solid #0977bc;
+    -webkit-transition: .3s;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cases .col-sm-3:hover .cta-banner-wrapper {
   border-bottom: 5px solid $leaf;
   transition: .3s;
+}
+
+.hollow-button-wrapper {
+  color: $cloudy;
+}
+
+.hollow-button-wrapper p {
+  font-size: 24px;
 }
 
 /*--------------------------------
