@@ -24,7 +24,7 @@ NAVIGATION: css menus can be great for breaking up your code into modules as wel
 6.0 POSTS
 - 6.1 COMMENTS
 
-7.0 FULLWIDTH TEMPLATE
+7.0 PAGE, LAWYER, FULLWIDTH
 
 8.0 SUBPAGE TEMPLATE, SEARCH
 
@@ -174,6 +174,14 @@ $latoBold: "latobold", Helvetica;
 .center-children { /* must use flexbox */
   justify-content: space-between;
   align-items: center;
+}
+
+.justify-content {
+  justify-content: center;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .img-responsive {
@@ -658,6 +666,14 @@ ul#menu-primary-nav .nav-consultation a {
 4.0 SIDEBAR
 --------------------------------*/
 
+.sidebar-headline {
+  margin-top: 50px;
+}
+
+.lawyer-name {
+  margin-top: 0;
+}
+
 .sidebar-headline,
 .sidebar h4 /* wordpress override */ {
   border-bottom: 2px solid $denim;
@@ -714,6 +730,38 @@ ul#menu-primary-nav .nav-consultation a {
   font-size: 14px;
   font-style: italic;
   text-align: center;
+}
+
+.social-link {
+  @extend .block;
+  margin-top: 20px;
+}
+
+.social-link .social-url {
+  color: $ash;
+  font-size: 1.2em;
+}
+
+.social-url {
+  @extend .flexbox;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.social-url span {
+  padding-left: 5px;
+}
+
+.award {
+  @extend .block;
+  max-height: 150px;
+  width: auto;
+  max-width: 100%;
+  margin: 20px auto 0 auto;
+}
+
+.award:last-child {
+  margin-bottom: 50px;
 }
 
 /*--------------------------------
@@ -832,12 +880,46 @@ footer {
 }
 
 /*--------------------------------
-7.0 FULLWIDTH TEMPLATE
+7.0 LAWYER, FULLWIDTH
 --------------------------------*/
+
+/* LAWYER */
+
+.lawyer-content-wrapper ul {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.lawyer-content-wrapper ul li:before {
+  content: '\f19c';
+  font-family: fontAwesome;
+  color: $smoke;
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.verdicts-list li {
+  margin-bottom: 10px;
+  color: black;
+}
+
+ul.verdicts-list li:before {
+  content: '\f091';
+  font-family: fontAwesome;
+  color: $denim;
+  display: inline-block;
+  padding-right: 10px;
+}
 
 /*--------------------------------
 8.0 SUBPAGE TEMPLATE
 --------------------------------*/
+
+/* PAGE */
+
+.page-content {
+  @extend .justify;
+}
 
 .hero .black-overlay {
   opacity: .5;

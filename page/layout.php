@@ -1,7 +1,7 @@
 <main class="content-wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-sm-8">
+      <div class="col-sm-8 page-content">
         <img
           class="img-responsive img-featured"
           src="<?php the_post_thumbnail_url(); ?>"
