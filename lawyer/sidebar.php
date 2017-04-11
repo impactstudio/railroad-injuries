@@ -52,7 +52,7 @@
       ?>
 
       <img
-        class="award"
+        class="award col-xs-6"
         src="<?php echo $award_image['url']; ?>"
         alt="<?php echo $award_text; ?>">
 

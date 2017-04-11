@@ -754,8 +754,6 @@ ul#menu-primary-nav .nav-consultation a {
 
 .award {
   @extend .block;
-  max-height: 150px;
-  width: auto;
   max-width: 100%;
   margin: 20px auto 0 auto;
 }
@@ -1567,24 +1565,8 @@ ul.verdicts-list li:before {
 
 @media all and (max-width: 661px) {
 
-  .item, .carousel, .carousel-inner>.item>img {
-    height: 340px;
-  }
-
-  .carousel-caption h2 {
-    line-height: 80%;
-  }
-
-  .carousel-caption h2 span {
-    font-size: 35px;
-  }
-
-  .carousel-caption {
-    top: 12%;
-  }
-
-  .caption {
-    width: 100%;
+  .page-content {
+    text-align: left;
   }
 
   .btn-slider, .caption {
