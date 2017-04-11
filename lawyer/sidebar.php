@@ -49,12 +49,15 @@
       <?php
         $award_image  =  get_sub_field('award_image');
         $award_title  =  get_sub_field('award_title');
+        $award_link  =  get_sub_field('award_link');
       ?>
 
-      <img
-        class="award col-xs-6"
-        src="<?php echo $award_image['url']; ?>"
-        alt="<?php echo $award_text; ?>">
+      <a class="col-xs-6" href="<?php echo $award_link; ?>">
+        <img
+          class="award"
+          src="<?php echo $award_image['url']; ?>"
+          alt="<?php echo $award_text; ?>">
+      </a>
 
     <?php endwhile; ?>
 
