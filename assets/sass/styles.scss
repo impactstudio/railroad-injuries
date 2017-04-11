@@ -17,24 +17,18 @@ NAVIGATION: css menus can be great for breaking up your code into modules as wel
 
 3.0 HOME
 
-4.0 SIDEBAR
+4.0 SIDEBAR, LAWYER SIDEBAR
 
 5.0 FOOTER
 
 6.0 POSTS
 - 6.1 COMMENTS
 
-7.0 FULLWIDTH TEMPLATE
+7.0 PAGE, LAWYER, FULLWIDTH
 
-8.0 SHOWPAGE TEMPLATE
+8.0 SUBPAGE TEMPLATE, SEARCH
 
-9.0 TEAM TEMPLATE
-
-10.0 SUBPAGE - MARKETS, CORE CAPABILITIES, SEARCH
-
-11.0 PORTFOLIO
-
-12.0 MEDIA QUERIES
+9.0 MEDIA QUERIES
 
 ********************/
 
@@ -52,11 +46,11 @@ $smoke: #666;
 $image_path: "../img/";
 $video_path: "../video/";
 $font_path: "../fonts/";
-$montReg: "montserratRegular";
-$montBold: "montserratbold";
-$lato: "latoregular";
-$latoItalic: "latoitalic";
-$latoBold: "latobold";
+$montReg: "montserratRegular", Helvetica;
+$montBold: "montserratbold", Helvetica;
+$lato: "latoregular", Helvetica;
+$latoItalic: "latoitalic", Helvetica;
+$latoBold: "latobold", Helvetica;
 
 @font-face {
   font-family: 'montserratRegular';
@@ -182,8 +176,24 @@ $latoBold: "latobold";
   align-items: center;
 }
 
+.justify-content {
+  justify-content: center;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.img-responsive {
+  width: 100%;
+}
+
 .wrap {
   flex-wrap: wrap;
+}
+
+.no-wrap {
+  flex-wrap: nowrap;
 }
 
 .content-wrapper {
@@ -347,12 +357,19 @@ $latoBold: "latobold";
 
 /* end image link hover box */
 
+.desaturate-zoom {
+  filter: grayscale(100%);
+  transform: scale(1.02);
+}
+
 /*--------------------------------
 1.4 DEFAULT
 --------------------------------*/
 
 * {
   box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 img {
@@ -366,7 +383,10 @@ body {
   font-family: $lato;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   margin-top: 0;
   font-family: $montReg;
 }
@@ -378,12 +398,6 @@ p {
 }
 
 i {}
-
-/* fixes horizontal overflow that sometimes happens with boostrap nested rows */
-// .row {
-//   margin-left: 0;
-//   margin-right: 0;
-// }
 
 small {
   font-size: .7em;
@@ -409,6 +423,51 @@ a:hover {
 1.5 FORMS
 --------------------------------*/
 
+// hero form
+
+.form-wrapper {
+  @include placeholder {
+    color: white;
+  }
+  background-color: rgba(51, 51, 51, .9);
+  padding: 30px;
+  font-family: $montReg;
+}
+
+.form-wrapper hr {
+  border-top: 3px solid $smoke;
+}
+
+.form-wrapper input,
+.form-wrapper textarea {
+  border-radius: 0;
+  color: white;
+  font-size: 20px;
+  background-color: $denim;
+  border: none;
+}
+
+.form-wrapper textarea {
+  height: 150px;
+}
+
+// sidebar form
+
+.sidebar-form {
+  @extend .form-wrapper;
+  padding: 0;
+  background-color: transparent;
+}
+
+.sidebar-form input,
+.sidebar-form textarea {
+  background-color: $ash;
+}
+
+.sidebar-form.btn.btn-submit {
+  background-color: $denim;
+}
+
 /*--------------------------------
 2.0 HEADER
 --------------------------------*/
@@ -418,8 +477,12 @@ a:hover {
   padding: 22px 0;
 }
 
+.header-info {
+  flex-wrap: wrap;
+}
+
 .header-info li,
-.header-info li a {
+.header-link {
   color: white;
   list-style: none;
   font-size: 16px;
@@ -441,13 +504,13 @@ a:hover {
   padding-top: 5px;
 }
 
-li.phone a {
+.phone-number {
   font-size: 2.2em;
   font-family: $montReg;
   letter-spacing: -1px;
 }
 
-.header-info li.social i {
+.header-social-icon {
   padding-right: 15px;
 }
 
@@ -555,32 +618,6 @@ ul#menu-primary-nav .nav-consultation a {
   // align-items: center;
 }
 
-.form-wrapper {
-  @include placeholder {
-    color: white;
-  }
-  background-color: $ash;
-  padding: 30px;
-  font-family: $montReg;
-}
-
-.form-wrapper hr {
-  border-top: 3px solid $smoke;
-}
-
-.form-wrapper input,
-.form-wrapper textarea {
-  border-radius: 0;
-  color: white;
-  font-size: 20px;
-  background-color: $denim;
-  border: none;
-}
-
-.form-wrapper textarea {
-  height: 150px;
-}
-
 // Cases Section
 
 .cases .col-sm-12 {
@@ -642,30 +679,100 @@ ul#menu-primary-nav .nav-consultation a {
 4.0 SIDEBAR
 --------------------------------*/
 
-.sidebar .sidebar-headline {
+.sidebar-headline {
+  margin-top: 50px;
+}
+
+.sidebar-headline:first-child {
+  margin-top: 0;
+}
+
+.lawyer-name {
+  margin-top: 0;
+}
+
+.sidebar-headline,
+.sidebar h4 /* wordpress override */ {
   border-bottom: 2px solid $denim;
   color: $ash;
-  font-family: $montReg;
+  font-family: $montBold;
   padding-bottom: 10px;
   font-size: 30px;
 }
 
-.sidebar-form {
-  @extend .form-wrapper;
-  padding: 0;
-  background-color: transparent;
+.attorney-name {
+  text-align: center;
+  font-size: 1.2em;
+  margin-bottom: 5px;
 }
 
-.sidebar-form input, .sidebar-form textarea {
-  background-color: $ash;
+.attorney-name a {
+  color: $denim;
 }
 
-.sidebar-form.btn.btn-submit {
-  background-color: $denim;
+.attorney-name a:hover {
+  color: $leaf;
 }
 
-.sidebar-widget-wrapper {
+.widget {
   margin-bottom: 40px;
+}
+
+.sidebar ul {
+  @extend .list-unstyled;
+}
+
+.sidebar ul li a {
+  color: $denim;
+}
+
+.sidebar ul li a:hover {
+  color: $leaf;
+}
+
+.sidebar-lawyer {
+  @extend .img-circle;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  @include transition(ease-out, .3s);
+}
+
+.sidebar-lawyer:hover {
+  @extend .desaturate-zoom;
+  @include transition(ease-in, .3s);
+}
+
+.attorney-role {
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+}
+
+.social-link {
+  @extend .block;
+  margin-top: 20px;
+}
+
+.social-link .social-url {
+  color: $ash;
+  font-size: 1.2em;
+}
+
+.social-url {
+  @extend .flexbox;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.social-url span {
+  padding-left: 5px;
+}
+
+.award {
+  @extend .block;
+  max-width: 100%;
+  margin: 20px auto 0 auto;
 }
 
 /*--------------------------------
@@ -674,11 +781,6 @@ ul#menu-primary-nav .nav-consultation a {
 
 footer {
   color: $cream;
-}
-
-.bg-footer {
-  background: url("#{$image_path}bg_footer.jpg") center top no-repeat;
-  background-size: cover;
 }
 
 .footer-widget {
@@ -714,30 +816,6 @@ footer {
   display: block;
 }
 
-/* footer nav widget */
-
-#menu-core-capabilities {
-  background-color: transparent;
-  margin-top: 0;
-}
-
-#menu-core-capabilities, #menu-core-capabilities li, .footer-external-links li {
-  display: block;
-  color: $cream;
-  text-align: left;
-}
-
-#menu-core-capabilities, .footer-external-links, .footer-external-links li a {
-  padding: 0;
-}
-
-#menu-core-capabilities li, .footer-external-links li {
-  border-right: 0;
-  padding: 0;
-  line-height: 30px;
-  list-style: none;
-}
-
 .footer-icon {
   padding-right: 5px;
 }
@@ -747,7 +825,7 @@ footer {
 }
 
 .footer-widget h4 {
-  font-size: 20px;
+  font-size: 1.2em;
   display: inline-block;
   color: $cream;
   border-bottom: 3px solid;
@@ -813,12 +891,46 @@ footer {
 }
 
 /*--------------------------------
-7.0 FULLWIDTH TEMPLATE
+7.0 LAWYER, FULLWIDTH
 --------------------------------*/
 
+/* LAWYER */
+
+.lawyer-content-wrapper ul {
+  list-style: none;
+  margin: 20px 0;
+}
+
+.lawyer-content-wrapper ul li:before {
+  content: '\f19c';
+  font-family: fontAwesome;
+  color: $smoke;
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.verdicts-list li {
+  margin-bottom: 10px;
+  color: black;
+}
+
+ul.verdicts-list li:before {
+  content: '\f091';
+  font-family: fontAwesome;
+  color: $denim;
+  display: inline-block;
+  padding-right: 10px;
+}
+
 /*--------------------------------
-8.0 SHOWPAGE TEMPLATE
+8.0 SUBPAGE TEMPLATE
 --------------------------------*/
+
+/* PAGE */
+
+.page-content {
+  @extend .justify;
+}
 
 .hero .black-overlay {
   opacity: .5;
@@ -842,7 +954,7 @@ footer {
 }
 
 .breadcrumbs {
-  font-size: 16px;
+  font-size: .9em;
   padding: 25px 0;
   color: white;
 }
@@ -893,44 +1005,6 @@ footer {
   text-align: justify;
   font-size: 18px;
 }
-
-/*--------------------------------
-9.0 TEAM TEMPLATE
---------------------------------*/
-
-.team {
-  text-align: center;
-}
-
-.team-headshot {
-  display: block;
-  width: 100%;
-  height: 263px;
-  margin: 0 auto 20px auto;
-}
-
-.team-member-name {
-  color: $denim;
-  font-size: 22px;
-  margin-bottom: 5px;
-}
-
-.team-member-role {
-  font-weight: bold;
-  font-size: 12px;
-  display: inline-block;
-  margin-bottom: 10px;
-}
-
-.team-member-quote {
-  font-weight: 200;
-  margin-bottom: 0;
-  line-height: 23px;
-}
-
-/*--------------------------------
-10.0 SUBPAGE - MARKETS, CORE CAPABILITIES
---------------------------------*/
 
 .subpage-hero {
   width: 100%;
@@ -1082,7 +1156,7 @@ footer {
 }
 
 /*--------------------------------
-12.0 MEDIA QUERIES
+9.0 MEDIA QUERIES
 --------------------------------*/
 
 @media all and (min-width: 1440px) {
@@ -1095,6 +1169,21 @@ footer {
 @media \0 all {
   .carousel {
     display: inline-block;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .header-wrapper {
+    display: block;
+  }
+
+  .logo {
+    display: block;
+    margin: 0 auto 20px auto;
+  }
+
+  .header-info {
+    justify-content: flex-start;
   }
 }
 
@@ -1209,12 +1298,9 @@ footer {
   .company-details {
     font-size: 9px;
   }
+
   .logo {
     margin-bottom: 15px;
-  }
-
-  .flexbox {
-    flex-direction: column;
   }
 
   p:last-child {
@@ -1224,6 +1310,27 @@ footer {
   .credential:first-child {
     border-right: 0;
     font-size: 20px;
+  }
+
+  .header-info {
+    flex-direction: column;
+  }
+
+  .header-info li {
+    border-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .header-info li:last-child {
+    margin-bottom: 0px;
+  }
+
+  .phone small {
+    text-align: center;
+  }
+
+  .fela {
+    display: none;
   }
 
   .certified-info {
@@ -1444,6 +1551,7 @@ footer {
 
   h1, h2, h3, h4 {
     margin-bottom: 15px;
+    font-family: $montBold;
   }
 
   .primary-nav {
@@ -1470,24 +1578,8 @@ footer {
 
 @media all and (max-width: 661px) {
 
-  .item, .carousel, .carousel-inner>.item>img {
-    height: 340px;
-  }
-
-  .carousel-caption h2 {
-    line-height: 80%;
-  }
-
-  .carousel-caption h2 span {
-    font-size: 35px;
-  }
-
-  .carousel-caption {
-    top: 12%;
-  }
-
-  .caption {
-    width: 100%;
+  .page-content {
+    text-align: left;
   }
 
   .btn-slider, .caption {

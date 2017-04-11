@@ -8,7 +8,7 @@ add_theme_support( 'html5');
 add_theme_support( 'menus' );
 add_theme_support( 'custom-logo' );
 add_theme_support( 'gallery' );
-add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'post-thumbnails' );
 // different ways of showing post content
 // add_theme_support( 'post-formats', array('video', 'aside', 'gallery', 'image'));
 
@@ -50,7 +50,7 @@ function theme_js() {
 add_action('wp_enqueue_scripts', 'theme_js' );
 
 
-// custom post type
+// lawyer
 add_action('init', 'create_lawyer_post_type');
 function create_lawyer_post_type() {
   register_post_type(

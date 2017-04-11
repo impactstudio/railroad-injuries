@@ -15,7 +15,7 @@
     <section class="header row">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 col-lg-offset-0 col-sm-10 col-sm-offset-1 flexbox center-children">
+          <div class="col-lg-12 col-lg-offset-0 col-sm-10 col-sm-offset-1 flexbox center-children header-wrapper">
     <!-- layout -->
 
             <?php

@@ -5,17 +5,21 @@
 
     if ( get_post_type() == 'post' ) {
 
-     get_template_part('post/layout');
+      get_template_part('post/layout');
 
-   } elseif (is_page_template('page-fullwidth.php')) {
+    } elseif ( get_post_type() == 'lawyer') {
+
+     get_template_part('lawyer/layout');
+
+    } elseif (is_page_template('page-fullwidth.php')) {
 
       get_template_part('fullwidth/layout');
 
-    } elseif (is_page_template('page-subpage.php')) {
+    } else {
 
       get_template_part('page/layout');
 
-    }
+   }
 
   endwhile;
   else: _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
