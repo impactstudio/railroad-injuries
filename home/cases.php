@@ -18,30 +18,25 @@
         <p><?php echo $cases_subheader; ?></p>
       </div>
 
-      <?php if(have_rows('cases')) : ?>
+      <div class="row">
+        <?php if(have_rows('cases')) : ?>
 
-        <?php while(have_rows('cases')) : the_row(); ?>
+          <?php while(have_rows('cases')) : the_row(); ?>
 
-          <div class="col-sm-3">
-            <img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>">
-            <div class="cta-banner-wrapper text-center">
-              <h3><?php echo get_sub_field('banner_text'); ?></h3>
+            <div class="col-sm-3">
+              <img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>">
+              <div class="cta-banner-wrapper text-center">
+                <h3><?php echo get_sub_field('banner_text'); ?></h3>
+              </div>
             </div>
-          </div>
 
-        <?php endwhile; ?>
+          <?php endwhile; ?>
 
-      <?php endif; ?>
+        <?php endif; ?>
+      </div>
+
+      <?php hollow_btn("View All Cases"); ?>
 
     </div>
   </div>
 </section>
-
-<div class="container hollow-button-wrapper">
-  <div class="row">
-    <div class="col-sm-12 text-center">
-      <p>View All Cases <span>></span></p>
-    </div>
-  </div>
-</div>
-

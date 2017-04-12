@@ -221,6 +221,29 @@ $latoBold: "latobold", Helvetica;
   @include transition(ease, .3s);
 }
 
+.btn.btn-hollow {
+  color: $cloudy;
+  border: solid 1px;
+  border-radius: 0;
+  font-size: 18px;
+  @include transition(ease, .3s);
+}
+
+.btn-hollow-wrapper i {
+  top: 50px;
+  left: 654px;
+  color: #e4e4e4;
+  border: 1px solid;
+  padding: 10px 10px 9.5px 10px;
+  @include transition(ease, .3s);
+}
+
+.btn-hollow-wrapper:hover a,
+.btn-hollow-wrapper:hover i {
+  color: $smoke;
+  @include transition(ease, .3s);
+}
+
 .main-headline {
   font-size: 46px;
   color: $denim;
@@ -261,6 +284,62 @@ $latoBold: "latobold", Helvetica;
   i {
     margin-left: 1px;
   }
+}
+
+.top10 {
+  margin-top: 10px;
+}
+
+.top20 {
+  margin-top: 20px;
+}
+
+.top30 {
+  margin-top: 30px;
+}
+
+.top40 {
+  margin-top: 40px;
+}
+
+.top50 {
+  margin-top: 50px;
+}
+
+.top60 {
+  margin-top: 60px;
+}
+
+.bottom10 {
+  margin-bottom: 10px;
+}
+
+.bottom20 {
+  margin-bottom: 20px;
+}
+
+.bottom30 {
+  margin-bottom: 30px;
+}
+
+.bottom40 {
+  margin-bottom: 40px;
+}
+
+.bottom50 {
+  margin-bottom: 50px;
+}
+
+.bottom60 {
+  margin-bottom: 60px;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
 }
 
 /* image link hover box */

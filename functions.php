@@ -91,6 +91,13 @@ function get_court_house(){
         '</div>';
 }
 
+function hollow_btn($btn_text){
+	echo '<div class="col-sm-12 text-center btn-hollow-wrapper relative">' . 
+			    '<a href="#" class="btn btn-hollow top50">' . $btn_text . '</a>' . 
+			    '<i class="fa fa-chevron-right absolute" aria-hidden="true"></i>' . 
+			  '</div>';
+}
+
 function editcompanydetails() {
 	?>
 	<div class='wrap'>
