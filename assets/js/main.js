@@ -1,4 +1,34 @@
 (function($) {
+
+  function Counter(className) {
+    // We utilize the self var so other methods within the class have access to it. Similar to a class variable in ruby.
+    var self = this;
+    this.className = className;
+    this.total = parseInt($(this.className).data('count'));
+    this.setInitialValue = function() { $(this.className).html(0); };
+    this.countUp = function() {
+      $(this.className).prop('Count', 0).animate(
+        {
+          Count: this.total
+        },
+        {
+          duration: 2500,
+          easing: 'swing',
+          step: function () {
+          $(this).text('$' + parseInt(this.Count).toLocaleString());
+        },
+          complete: function(){
+            $(this).html("$" + this.Count.toLocaleString());
+          }
+      });
+    };
+    this.execute = function() {
+      self.setInitialValue();
+      setTimeout(function(counter){
+        self.countUp(); }, 1000);
+    }
+  }
+
   function mobileMenu() {
     // hide cross icon, hide menu and on click transition them in
     $('.cross').hide();
@@ -29,6 +59,9 @@
 
   // run javascript after other files have loaded
   $(document).ready(function(){
+    var NewCounter = new Counter('.counter');
+    NewCounter.execute();
+    
     if (window.outerWidth < 991) {
       mobileMenu();
     }

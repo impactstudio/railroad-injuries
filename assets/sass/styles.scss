@@ -229,17 +229,16 @@ $latoBold: "latobold", Helvetica;
   @include transition(ease, .3s);
 }
 
-.btn-hollow-wrapper i {
-  top: 50px;
-  left: 654px;
-  color: #e4e4e4;
+.btn.btn-hollow span {
+  right: -30px;
+  top: -.5px;
+  height: 38.5px;
+  width: 30px;
   border: 1px solid;
-  padding: 10px 10px 9.5px 10px;
-  @include transition(ease, .3s);
+  padding: 8px;
 }
 
-.btn-hollow-wrapper:hover a,
-.btn-hollow-wrapper:hover i {
+.btn.btn-hollow:hover {
   color: $smoke;
   @include transition(ease, .3s);
 }
@@ -746,13 +745,13 @@ ul#menu-primary-nav .nav-consultation a {
   transition: .3s;
 }
 
-.hollow-button-wrapper {
-  color: $cloudy;
-}
-
 .hollow-button-wrapper p {
   font-size: 24px;
 }
+
+// Settlements Section
+
+
 
 /*--------------------------------
 4.0 SIDEBAR

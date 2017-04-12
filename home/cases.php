@@ -35,7 +35,7 @@
         <?php endif; ?>
       </div>
 
-      <?php hollow_btn("View All Cases"); ?>
+      <?php hollow_btn("View All Cases", "#"); ?>
 
     </div>
   </div>

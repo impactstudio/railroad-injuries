@@ -91,10 +91,9 @@ function get_court_house(){
         '</div>';
 }
 
-function hollow_btn($btn_text){
-	echo '<div class="col-sm-12 text-center btn-hollow-wrapper relative">' . 
-			    '<a href="#" class="btn btn-hollow top50">' . $btn_text . '</a>' . 
-			    '<i class="fa fa-chevron-right absolute" aria-hidden="true"></i>' . 
+function hollow_btn($btn_text, $btn_link){
+	echo '<div class="col-sm-12 text-center">' . 
+			    '<a href="' . $btn_link . '" class="btn btn-hollow relative top50">' . $btn_text . ' <span class="absolute"><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>' .
 			  '</div>';
 }
 
