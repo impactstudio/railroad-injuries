@@ -59,9 +59,21 @@
 
   // run javascript after other files have loaded
   $(document).ready(function(){
-    var NewCounter = new Counter('.counter');
-    NewCounter.execute();
-    
+    var counter = new Counter('.counter');
+
+    var docWindow = $(window)
+    var counterDistance = $('.settlements').offset().top;
+    var alreadyScrolled = false;
+
+    docWindow.scroll(function() {
+        if (!alreadyScrolled) {
+          if ( docWindow.scrollTop() >= counterDistance ) {
+             counter.execute(); 
+             alreadyScrolled = true; 
+          } 
+        }
+    });
+
     if (window.outerWidth < 991) {
       mobileMenu();
     }
