@@ -2,6 +2,8 @@
 
 	$settlements_header = 								get_field('settlements_header');
 	$settlements_amount = 								get_field('settlements_amount');
+	$settlements_button_text = 						get_field('settlements_button_text');
+	$settlements_button_link = 						get_field('settlements_button_link');
 
 ?>
 
@@ -9,10 +11,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12 text-center">
-				<h3><?php echo $settlements_header; ?></h3>
-				<h2 class="counter" data-count="<?php echo $settlements_amount; ?>"></h2>
+				<h3 class="settlements-header"><?php echo $settlements_header; ?></h3>
+				<h2 class="counter" data-count="<?php echo $settlements_amount; ?>">$0</h2>
 			</div>
-			<?php hollow_btn("View All Verdicts and Settlements", "#"); ?>
+			<?php hollow_btn($settlements_button_text, $settlements_button_link); ?>
 		</div>
 	</div>
 </section>
