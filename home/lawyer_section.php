@@ -6,13 +6,13 @@
 
 ?>
 
-<div class="lawyer-section-wrap">
+<div class="lawyer-section-wrap content-wrapper">
 	<div class="container">
 		<div class="row">
 
 			<?php get_court_house(); ?>
 
-			<div class="col-sm-12 text-center">
+			<div class="col-sm-8 col-sm-offset-2 text-center top30 bottom30">
 				<h2><?php echo $lawyer_header_black; ?> <span><?php echo $lawyer_header_blue ?></span></h2>
 				<p><?php echo $lawyer_subheader; ?></p>
 			</div>
