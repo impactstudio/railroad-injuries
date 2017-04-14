@@ -8,7 +8,10 @@ $lawyers = new WP_Query($args);
 
 ?>
 
-<?php if ($lawyers->have_posts()) :  while($lawyers->have_posts()) : $lawyers->the_post(); ?>
+<?php if ($lawyers->have_posts()) :  while($lawyers->have_posts()) : $lawyers->the_post();
+  $role = get_field('role');
+?>
+
   <a href="<?php the_permalink(); ?>">
     <img
       class="sidebar-lawyer"
@@ -20,5 +23,5 @@ $lawyers = new WP_Query($args);
       <?php the_title(); ?>
     </a>
   </h5>
-  <p class="attorney-role">President of RVPC</p>
+  <p class="attorney-role"><?php echo $role; ?></p>
 <?php endwhile; endif; ?>

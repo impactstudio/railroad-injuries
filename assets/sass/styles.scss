@@ -914,6 +914,7 @@ footer {
     ),
     url("#{$image_path}bg_footer.jpg") center center no-repeat;
   background-size: cover;
+  border-top: 5px solid $denim;
 }
 
 footer ul {
@@ -1004,11 +1005,20 @@ footer {
   color: $leaf;
 }
 
-.footer-links {
+.footer-links-wrapper {
+  width: 100%;
   background-color: #111;
+}
+
+.footer-links {
   list-style: none;
   text-align: center;
   padding: 17px 0;
+  color: white;
+}
+
+.footer-links li {
+  display: inline-block;
 }
 
 .footer-link {
