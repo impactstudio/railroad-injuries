@@ -1,16 +1,16 @@
 <?php
 
 $args = [
-  'post_type' => 'lawyer'
+  'post_type' => 'lawyer',
 ];
 
 $lawyers = new WP_Query($args);
 
 ?>
 
-<?php if ($lawyers->have_posts()) :  while($lawyers->have_posts()) : $lawyers->the_post();
-  $role = get_field('role');
-?>
+<?php if ($lawyers->have_posts()) :  while($lawyers->have_posts()) : $lawyers->the_post(); ?>
+
+  <?php $role = get_field('role'); ?>
 
   <a href="<?php the_permalink(); ?>">
     <img
@@ -24,4 +24,5 @@ $lawyers = new WP_Query($args);
     </a>
   </h5>
   <p class="attorney-role"><?php echo $role; ?></p>
+
 <?php endwhile; endif; ?>
