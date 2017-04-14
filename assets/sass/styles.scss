@@ -231,7 +231,7 @@ $latoBold: "latobold", Helvetica;
 
 .btn.btn-hollow span {
   right: -30px;
-  top: -.5px;
+  top: -1px;
   height: 38.5px;
   width: 30px;
   border: 1px solid;
@@ -758,7 +758,7 @@ ul#menu-primary-nav .nav-consultation a {
 
 .counter {
   color: white;
-  font-size: 60px;
+  font-size: 5em;
   font-weight: 400;
 }
 
@@ -861,12 +861,10 @@ ul#menu-primary-nav .nav-consultation a {
   width: 50%;
   display: block;
   margin: 0 auto;
-  @include transition(ease-out, .3s);
-}
-
-.sidebar-lawyer:hover {
-  @extend .desaturate-zoom;
-  @include transition(ease-in, .3s);
+  @include transition(ease, .3s);
+  &:hover {
+    @extend .desaturate-zoom;
+  }
 }
 
 .attorney-role {
@@ -1008,27 +1006,39 @@ footer {
 .footer-links-wrapper {
   width: 100%;
   background-color: #111;
+  padding: 20px 0;
 }
 
 .footer-links {
-  list-style: none;
-  text-align: center;
-  padding: 17px 0;
   color: white;
+  @extend .flexbox;
+  justify-content: space-between;
+  align-items: center;
+  .social_links {
+    font-size: 2em;
+    li {
+      border-right: 0;
+    }
+  }
 }
 
-.footer-links li {
+.footer-links ul li {
   display: inline-block;
+  border-right: 2px solid;
+  padding: 0 10px;
 }
 
-.footer-link {
-  display: inline-block;
-  padding-right: 10px;
-  color: $smoke;
+.footer-links ul li:first-child {
+  padding-left: 0;
+}
+
+.footer-links ul li:last-child {
+  padding-right: 0;
+  border-right: 0;
 }
 
 .footer-link a {
-  color: $smoke;
+  color: $denim;
   font-weight: normal;
 }
 
