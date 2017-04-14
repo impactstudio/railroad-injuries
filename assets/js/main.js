@@ -5,7 +5,7 @@
     var self = this;
     this.className = className;
     this.total = parseInt($(this.className).data('count'));
-    this.setInitialValue = function() { $(this.className).html(0); };
+    this.setInitialValue = function() { $(this.className).html("$" + 0); };
     this.countUp = function() {
       $(this.className).prop('Count', 0).animate(
         {
