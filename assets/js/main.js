@@ -24,8 +24,7 @@
     };
     this.execute = function() {
       self.setInitialValue();
-      setTimeout(function(counter){
-        self.countUp(); }, 1000);
+      self.countUp();
     }
   }
 
@@ -67,10 +66,10 @@
 
     docWindow.scroll(function() {
         if (!alreadyScrolled) {
-          if ( docWindow.scrollTop() >= counterDistance ) {
-             counter.execute(); 
-             alreadyScrolled = true; 
-          } 
+          if ( docWindow.scrollTop() >= counterDistance - 250 ) {
+             counter.execute();
+             alreadyScrolled = true;
+          }
         }
     });
 
