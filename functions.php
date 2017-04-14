@@ -92,53 +92,15 @@ function get_court_house(){
 }
 
 function hollow_btn($btn_text, $btn_link){
-	echo '<div class="col-sm-12 text-center">' . 
+	echo '<div class="col-sm-12 text-center">' .
 			    '<a href="' . $btn_link . '" class="btn btn-hollow relative top50">' . $btn_text . ' <span class="absolute"><i class="fa fa-chevron-right" aria-hidden="true"></i></span></a>' .
 			  '</div>';
 }
 
-function editcompanydetails() {
-	?>
-	<div class='wrap'>
-	<h2>Company Details</h2>
-	<form method="post" action="options.php">
-	<?php wp_nonce_field('update-options') ?>
+if( function_exists('acf_add_options_page') ) {
 
-	<p><strong>Company Name:</strong><br />
-	<input type="text" name="companyname" size="45" value="<?php echo get_option('companyname'); ?>" /></p>
+	acf_add_options_page();
 
-	<p><strong>Business Address:</strong><br />
-	<input type="text" name="businessaddress" size="45" value="<?php echo get_option('businessaddress'); ?>" /></p>
+}
 
-	<p><strong>Telephone:</strong><br />
-	<input type="text" name="phonenumber" size="45" value="<?php echo get_option('phonenumber'); ?>" /></p>
-
-	<p><strong>Email Address:</strong><br />
-	<input type="email" name="emailaddress" size="45" value="<?php echo get_option('emailaddress'); ?>" /></p>
-
-  <p><strong>Certification: (i.e. ISO 9001:2008)</strong><br />
-	<input type="text" name="certification" size="45" value="<?php echo get_option('certification'); ?>" /></p>
-
-  <p><strong>Link to Certification: (ex. take link from uploaded cert and paste it here)</strong><br />
-	<input type="text" name="certificationlink" size="45" value="<?php echo get_option('certificationlink'); ?>" /></p>
-
-  <p><strong>Facebook Link</strong><br />
-	<input type="text" name="facebook" size="45" value="<?php echo get_option('facebook'); ?>" /></p>
-
-  <p><strong>Google My Business Link</strong><br />
-	<input type="text" name="google" size="45" value="<?php echo get_option('google'); ?>" /></p>
-
-  <p><strong>LinkedIn Link</strong><br />
-	<input type="text" name="linkedin" size="45" value="<?php echo get_option('linkedin'); ?>" /></p>
-
-  <p><strong>Google Maps Link</strong><br />
-	<input type="text" name="gmaps" size="45" value="<?php echo get_option('gmaps'); ?>" /></p>
-
-	<p><input class="button button-primary" type="submit" name="Submit" value="Update Options" /></p>
-
-	<input type="hidden" name="action" value="update" />
-	<input type="hidden" name="page_options" value="companyname,businessaddress,phonenumber,emailaddress, certification,certificationlink,facebook,google,linkedin, gmaps" />
-
-	</form>
-	</div>
-<?php } ?>
+?>
