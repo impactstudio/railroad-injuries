@@ -1,3 +1,15 @@
+<?php
+  $phone =                  get_field('main_phone', 'options');
+  $toll_free =              get_field('toll_free', 'option');
+  $toll_free_colorado =     get_field('toll_free_colorado', 'option');
+  $email =                  get_field('email_address', 'option');
+  $facebook =               get_field('facebook', 'option');
+  $gplus =                  get_field('google_plus', 'option');
+  $linkedin =               get_field('linkedin', 'option');
+  $business_address =       get_field('business_address', 'option');
+  $gmaps =                  get_field('gmaps', 'option');
+?>
+
 <!-- footer widget area 1 -->
 <div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
 
@@ -39,27 +51,16 @@
 </div>
 
 <!-- footer widget area 3 -->
-<div class="col-md-3 col-sm-6 col-xs-6 footer-widget widget">
+<div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
 
-  <h4>External Links</h4>
+  <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('footer-widget-3')) : else : ?>
 
-  <ul class="footer-external-links">
-    <?php if (!empty(get_option('facebook'))): ?>
-      <li>
-        <a class="facebook" href="<?php echo get_option('facebook'); ?>"><i class="fa fa-facebook-square footer-icon icon-cream facebook"></i> Facebook</a>
-      </li>
-    <?php endif; ?>
-    <?php if (!empty(get_option('google'))): ?>
-      <li>
-        <a class="google" href="<?php echo get_option('google'); ?>"><i class="fa fa-google-plus-square footer-icon icon-cream google"></i> Google</a>
-      </li>
-    <?php endif; ?>
-    <?php if (!empty(get_option('linkedin'))): ?>
-      <li>
-        <a class="linkedin" href="<?php echo get_option('linkedin'); ?>"><i class="fa fa-linkedin-square footer-icon icon-cream linkedin"></i> LinkedIn</a>
-      </li>
-    <?php endif; ?>
-  </ul>
+  <div class="pre-widget">
+    <p><strong>Widgetized Area</strong></p>
+    <p>This panel is active and ready for you to add some widgets via the WP Admin</p>
+  </div>
+
+  <?php endif; ?>
 
 </div>
 
@@ -70,24 +71,28 @@
 
   <ul class="footer-external-links footer-company-info">
     <li>
-      <a target="_blank" href="<?php echo get_option('certificationlink'); ?>">
-        <i class="fa fa-check-circle icon-cream" aria-hidden="true"></i>
-        Certified <?php echo get_option('certification'); ?>
+      <a href="<?php echo $gmaps; ?>" target="_blank"><i class="fa fa-university footer-icon denim"></i>
+        <?php echo $business_address; ?>
       </a>
     </li>
     <li>
-      <a href="<?php echo get_option('gmaps'); ?>" target="_blank"><i class="fa fa-university footer-icon icon-cream"></i>
-        <?php echo get_option('businessaddress'); ?>
+      <a href="tel:+1<?php echo remove_special_chars($phone); ?>">
+        <i class="fa fa-phone denim" aria-hidden="true"></i> <?php echo $phone; ?>
       </a>
     </li>
     <li>
-      <a href="tel:+1<?php echo remove_special_chars(get_option('phonenumber')); ?>">
-        <i class="fa fa-phone icon-cream" aria-hidden="true"></i> <?php echo get_option('phonenumber'); ?>
+      <a href="tel:+1<?php echo remove_special_chars($toll_free); ?>">
+        <i class="fa fa-phone-square denim" aria-hidden="true"></i> <?php echo $toll_free; ?>
       </a>
     </li>
     <li>
-      <a href="mailto:<?php echo get_option('emailaddress'); ?>">
-        <i class="fa fa-envelope icon-cream" aria-hidden="true"></i> <?php echo get_option('emailaddress'); ?>
+      <a href="tel:+1<?php echo remove_special_chars($toll_free_colorado); ?>">
+        <i class="fa fa-phone-square denim" aria-hidden="true"></i> <?php echo $toll_free_colorado; ?>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:<?php echo $email; ?>">
+        <i class="fa fa-envelope denim" aria-hidden="true"></i> <?php echo $email; ?>
       </a>
     </li>
   </ul>

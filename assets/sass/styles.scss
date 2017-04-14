@@ -907,13 +907,42 @@ ul#menu-primary-nav .nav-consultation a {
 
 footer {
   color: $cream;
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.3),
+      rgba(0,0,0,0.3)
+    ),
+    url("#{$image_path}bg_footer.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+footer ul {
+  @extend .list-unstyled;
+}
+
+footer {
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+.menu-item a {
+  color: white;
+  &:hover {
+    color: $leaf;
+  }
+}
+
+.widget_text {
+  font-size: .7em;
+  font-style: italic;
 }
 
 .footer-widget {
-  height: 261px;
+  height: 280px;
   padding-left: 30px;
   padding-right: 30px;
-  border-right: 2px solid $cream;
+  border-right: 2px solid $smoke;
 }
 
 .footer-widget:first-child {
@@ -953,8 +982,7 @@ footer {
 .footer-widget h4 {
   font-size: 1.2em;
   display: inline-block;
-  color: $cream;
-  border-bottom: 3px solid;
+  color: $leaf;
   padding-bottom: 5px;
 }
 

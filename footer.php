@@ -4,7 +4,7 @@
     <!-- layout -->
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 col-lg-offset-0 col-sm-10 col-sm-offset-1">
+          <div class="col-lg-12 col-lg-offset-0 col-sm-10 col-sm-offset-1 footer-content-wrapper">
     <!-- layout -->
         <?php get_template_part('footer/footer_widgets'); ?>
     <!-- layout -->
