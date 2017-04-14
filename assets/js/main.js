@@ -76,6 +76,18 @@
     if (window.outerWidth < 991) {
       mobileMenu();
     }
+
+    $('.owl-carousel').owlCarousel({
+      loop:true,
+      margin:10,
+      nav:true,
+      responsive:{
+        0:{
+            items:1
+        }
+    }
+})
+
   });
 
 })( jQuery );
