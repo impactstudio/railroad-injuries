@@ -1,4 +1,4 @@
-<div class="awards-section-wrap content-wrapper">
+<div class="awards-section-wrap content-wrapper-small">
 	<div class="container">
 		<div class="row">
 
