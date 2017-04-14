@@ -20,7 +20,7 @@
 
       <li>
         <span class="social-link">
-          <a class="social-url" href="<?php echo $social_link; ?>">
+          <a target="_blank" class="social-url" href="<?php echo $social_link; ?>">
             <img
               class="social-icon inline-block"
               src="<?php echo $social_icon['url']; ?>"
@@ -52,7 +52,7 @@
         $award_link  =  get_sub_field('award_link');
       ?>
 
-      <a class="col-xs-6" href="<?php echo $award_link; ?>">
+      <a target="_blank" class="col-xs-6" href="<?php echo $award_link; ?>">
         <img
           class="award"
           src="<?php echo $award_image['url']; ?>"
