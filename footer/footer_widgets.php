@@ -3,9 +3,6 @@
   $toll_free =              get_field('toll_free', 'option');
   $toll_free_colorado =     get_field('toll_free_colorado', 'option');
   $email =                  get_field('email_address', 'option');
-  $facebook =               get_field('facebook', 'option');
-  $gplus =                  get_field('google_plus', 'option');
-  $linkedin =               get_field('linkedin', 'option');
   $business_address =       get_field('business_address', 'option');
   $gmaps =                  get_field('gmaps', 'option');
 ?>
