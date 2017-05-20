@@ -4,7 +4,7 @@
   $toll_free_colorado =     get_field('toll_free_colorado', 'option');
   $email =                  get_field('email_address', 'option');
   $business_address =       get_field('business_address', 'option');
-  $gmaps =                  get_field('gmaps', 'option');
+  $gmaps =                  get_field('google_maps_link', 'option');
 ?>
 
 <!-- footer widget area 1 -->
