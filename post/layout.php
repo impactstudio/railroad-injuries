@@ -1,7 +1,7 @@
 <main class="content-wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-sm-8">
+      <div class="col-sm-8 post">
 
         <?php if(the_post_thumbnail()) : ?>
           <img
@@ -30,6 +30,7 @@
         <div class="post-content-wrapper">
           <?php the_content(); ?>
         </div>
+        <?php comments_template(); ?>
       </div>
         <?php get_sidebar(); ?>
     </div>
