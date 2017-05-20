@@ -1115,14 +1115,6 @@ footer {
   font-size: 1.5em;
 }
 
-.post {
-  float:left;
-  width: 48.5%;
-  margin: 0 0 15px 0;
-  box-sizing: border-box;
-  background: #f9f9f9;
-}
-
 .post-margin-fix {
   margin: 0 15px 15px 0;
 }
@@ -1294,6 +1286,20 @@ i:first-child {
 .post .post-meta a:hover {
   text-decoration: underline;
 }
+
+.post-details h1 {
+  padding-top: 20px;
+}
+
+div.social-sharing {
+  width: 32%;
+  position: absolute;
+  clear: both;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 16px;
+}
+
 .post .post-image {
   width: 100%;
   height: auto;

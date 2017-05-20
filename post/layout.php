@@ -27,7 +27,7 @@
           </div>
         </div>
 
-        <div class="post-content-wrapper">
+        <div class="post-content-wrapper post-excerpt">
           <?php the_content(); ?>
         </div>
         <?php comments_template(); ?>
