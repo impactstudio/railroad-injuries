@@ -120,4 +120,60 @@ if( function_exists('acf_add_options_page') ) {
   
 }
 
+/**
+ *  Shape Comment
+ */
+
+if ( ! function_exists( 'shape_comment' ) ) :
+function shape_comment( $comment, $args, $depth ) {
+    $GLOBALS['comment'] = $comment;
+    switch ( $comment->comment_type ) :
+        case 'pingback' :
+        case 'trackback' :
+    ?>
+    <li class="post pingback">
+        <p><?php _e( 'Pingback:', 'lawyeria' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'lawyeria' ), ' ' ); ?></p>
+    <?php
+            break;
+        default :
+    ?>
+    <li <?php comment_class('dark-text'); ?> id="li-comment-<?php comment_ID(); ?>" class="dark-text">
+        <article id="comment-<?php comment_ID(); ?>" class="comment">
+            <div class="comment-entry">
+                <div class="comment-entry-head">
+                    <strong><?php printf( __( '<span>%s</span>', 'lawyeria' ), sprintf( '%s', get_comment_author_link() ) ); ?></strong> said:
+                        <time pubdate datetime="<?php comment_time( 'c' ); ?>">
+                            <?php printf( __( '%1$s at %2$s', 'lawyeria' ), get_comment_date(), get_comment_time() ); ?>
+                        </time>
+                    <?php edit_comment_link( __( 'Edit', 'lawyeria' ), '- ' ); ?>
+                </div><!--/div .comment-entry-head-->
+                <div class="comment-entry-content">
+                    <?php comment_text(); ?>
+                </div><!--/div .comment-entry-content-->
+                <?php if ( $comment->comment_approved == '0' ) : ?>
+                    <em class="awaiting-moderation cf"><?php _e( 'Your comment is awaiting moderation.', 'lawyeria' ); ?></em><br />
+                <?php endif; ?>
+                <div class="coment-reply-link-div cf">
+                    <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'reply_text' => 'Reply to Comment', 'max_depth' => $args['max_depth'] ) ) ); ?>
+                </div><!--/div .coment-reply-link-div-->
+                <hr>
+            </div><!--/div .comment-entry-->
+        </article><!--/article-->
+
+    <?php
+            break;
+    endswitch;
+}
+endif;
+
+function wpb_move_comment_field_to_bottom( $fields ) {
+  $comment_field = $fields['comment'];
+  unset( $fields['comment'] );
+  $fields['comment'] = $comment_field;
+  return $fields;
+}
+
+add_filter( 'comment_form_fields', 'wpb_move_comment_field_to_bottom' );
+
+
 ?>
