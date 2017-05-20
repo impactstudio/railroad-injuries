@@ -45,6 +45,7 @@ $cloudy: #e4e4e4;
 $dark: #222;
 $ash: #333;
 $smoke: #666;
+$off_white: #F9F9F9;
 $image_path: "../img/";
 $video_path: "../video/";
 $font_path: "../fonts/";
@@ -477,6 +478,10 @@ h3,
 h4 {
   margin-top: 0;
   font-family: $montReg;
+}
+
+h1 {
+  font-size: 1.8em;
 }
 
 p {
@@ -1519,6 +1524,11 @@ i:first-child {
   -ms-opacity: 0.7;
   -o-opacity: 0.7;
   opacity: 0.7;
+}
+
+.post-content-wrapper {
+  padding: 15px 15px 5px 15px;
+  background-color: $off_white;
 }
 
 /*--------------------------------

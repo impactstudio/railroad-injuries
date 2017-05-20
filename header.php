@@ -8,7 +8,7 @@
   <?php wp_head(); ?>
 
 </head>
-<body>
+<body class="<?php body_class(); ?>">
   <header class="container-fluid">
 
     <!-- layout: use this for properly layout in include files where necessary -->
