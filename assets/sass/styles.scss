@@ -37,6 +37,7 @@ NAVIGATION: css menus can be great for breaking up your code into modules as wel
 --------------------------------*/
 
 $cream: #f1f1f1;
+$paint_water: #E4E4E4;
 $denim: #0977bc;
 $leaf: #8dc641;
 $cloudy: #e4e4e4;
@@ -839,6 +840,10 @@ ul#menu-primary-nav .nav-consultation a {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
+}
+
+.awards-section-wrap {
+  background: $paint_water;
 }
 
 /*--------------------------------
