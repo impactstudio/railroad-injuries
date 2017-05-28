@@ -28,7 +28,7 @@ Template Name: Blog
                     $feat_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
                   ?>
                 <div class="row">
-                              <div id="post-<?php echo $post->ID; ?>" class="latest-post">
+                              <div id="post-<?php echo $post->ID; ?>" class="latest-post col-sm-12">
                                   <div class="featured-tag">
                                     <h4>Featured</h4>
                                   </div>
@@ -67,14 +67,13 @@ Template Name: Blog
 
 
                     <?php  
-                      $args = [
-                        'post_type' => 'post',
-                        'order' => 'ASC',
+                      $sm_posts = [
+                        'posts_per_page' => 50,
                         'offset' => 1
                       ];
 
                       // The Query
-                      $posts = new WP_Query( $args );
+                      $posts = new WP_Query( $sm_posts );
                     ?>
 
                       <?php if ( $posts->have_posts() ) : ?>
@@ -84,16 +83,16 @@ Template Name: Blog
                           <div id="post-<?php the_ID(); ?>" class="col-sm-6 <?php post_class( 'post' ); ?>">
                             <?php
                               if ( $feat_image != NULL ) { ?>
-                                <div class="post-image">
+                                <div class="post-image post-image-sm">
                                   <img class="img-responsive" src="<?php echo $feat_image[0]; ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" />
                                 </div><!--/.post-image-->
                               <?php } else { ?>
-                                <div class="post-image">
+                                <div class="post-image post-image-sm">
                                   <img class="img-responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/img_featured.jpg" />
                                 </div><!--/.post-image-->
                               <?php } ?>
                             <div class="post-details">
-                              <h3>
+                              <h3 class="post-details-headline">
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                   <?php the_title(); ?>
                                 </a><!--/a-->

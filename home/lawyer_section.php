@@ -30,9 +30,11 @@
 					?>
 						
 						<div class="col-sm-3 text-center lawyer-cta">
-							<img src="<?php echo the_post_thumbnail_url(); ?>" class="bottom10 img-circle" alt="">
-							<h4 class="bottom"><?php the_title(); ?></h4>
-							<p class="bottom"><small><?php echo get_field('role'); ?></small></p>
+							<a href="<?php the_permalink(); ?>">
+								<img src="<?php echo the_post_thumbnail_url(); ?>" class="bottom10 img-circle" alt="">
+								<h4 class="bottom"><?php the_title(); ?></h4>
+								<p class="bottom"><small><?php echo get_field('role'); ?></small></p>
+							</a>
 						</div>
 
 						<?php wp_reset_postdata(); ?>
