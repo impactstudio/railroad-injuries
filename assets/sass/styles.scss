@@ -822,6 +822,9 @@ ul#menu-primary-nav .nav-consultation a {
   background: url(../img/bg_lawyers.jpg) top center no-repeat;
   background-size: cover;
   margin-top: -100px;
+  .lawyer-cta:first-child {
+    @extend .col-sm-offset-3;
+  }
 }
 
 .lawyer-section-wrap h2 {
@@ -953,6 +956,25 @@ ul#menu-primary-nav .nav-consultation a {
 /*--------------------------------
 5.0 FOOTER
 --------------------------------*/
+
+.testimonial-section-wrap {
+  background: url("#{$image_path}bg_testimonials.jpg") center center no-repeat;
+  background-size: cover;
+  color: white;
+
+  .owl-carousel {
+    height: 200px;
+    img.stars {
+      width: 25%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.client-name {
+  font-size: 2em;
+  margin-top: 20px;
+}
 
 footer {
   color: $cream;
@@ -1615,12 +1637,13 @@ p.comment-notes {
   font-size: 11px;
 }
 
-p.comment-notes-after {
+.post p.comment-notes-after {
   width: 82%;
   float: right;
   font-size: 11px;
   text-align: justify;
   color: #394753;
+  line-height: 13px;
 }
 
 .dark-text {
@@ -1917,7 +1940,7 @@ ul.verdicts-list li:before {
   font-weight: bold;
 }
 
-.post p, .post li, .post blockquote {
+.post-excerpt p, .post li, .post blockquote {
   font-size: 18px;
   line-height: 33px;
 }

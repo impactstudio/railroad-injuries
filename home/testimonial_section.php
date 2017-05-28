@@ -23,9 +23,10 @@
 
 							<div class="item">
 								<p><?php echo $testimonial; ?></p>
-								<p>-<?php echo $client_name; ?>
+								<img class="stars" src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/stars.png" alt="">
+								<p class="client-name">-<?php echo $client_name; ?>
 									<?php if($client_title) : ?>
-										<?php echo ' (' . $client_title . ')'; ?>
+										<em><?php echo ' (' . $client_title . ')'; ?></em>
 									<?php endif; ?>
 								</p>
 							</div>

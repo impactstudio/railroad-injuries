@@ -24,10 +24,12 @@
           <?php while(have_rows('cases')) : the_row(); ?>
 
             <div class="col-sm-3">
-              <img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>">
-              <div class="cta-banner-wrapper text-center">
-                <h3><?php echo get_sub_field('banner_text'); ?></h3>
-              </div>
+              <a href="<?php echo get_sub_field('url'); ?>">
+                <img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>">
+                <div class="cta-banner-wrapper text-center">
+                  <h3><?php echo get_sub_field('banner_text'); ?></h3>
+                </div>
+              </a>
             </div>
 
           <?php endwhile; ?>
