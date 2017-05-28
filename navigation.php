@@ -5,9 +5,9 @@
       <div class="col-lg-12 col-lg-offset-0 col-sm-10 col-sm-offset-1">
 <!-- layout -->
         <div class="mobile-menu">
-          <div class="header-search mobile-search">
-            <?php get_search_form(); ?>
-          </div>
+          <!-- <div class="header-search mobile-search"> -->
+            <?php // get_search_form(); ?>
+          <!-- </div> -->
           <button class="hamburger"></button>
           <button class="cross"></button>
         </div>
