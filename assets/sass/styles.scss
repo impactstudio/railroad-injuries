@@ -1615,12 +1615,13 @@ p.comment-notes {
   font-size: 11px;
 }
 
-p.comment-notes-after {
+.post p.comment-notes-after {
   width: 82%;
   float: right;
   font-size: 11px;
   text-align: justify;
   color: #394753;
+  line-height: 13px;
 }
 
 .dark-text {
@@ -1917,7 +1918,7 @@ ul.verdicts-list li:before {
   font-weight: bold;
 }
 
-.post p, .post li, .post blockquote {
+.post-excerpt p, .post li, .post blockquote {
   font-size: 18px;
   line-height: 33px;
 }
