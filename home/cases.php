@@ -22,7 +22,7 @@
 
           <?php while(have_rows('cases')) : the_row(); ?>
 
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6 case-cta">
               <a href="<?php echo get_sub_field('url'); ?>">
                 <img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>">
                 <div class="cta-banner-wrapper text-center">

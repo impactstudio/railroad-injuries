@@ -727,17 +727,20 @@ ul#menu-primary-nav .nav-consultation a {
   font-weight: 700;
 }
 
-.cases .col-sm-3 {
+.cases .col-md-3,
+.cases .col-sm-6 {
   position: relative;
 }
 
-.cases .col-sm-3 img {
+.cases .col-md-3 img,
+.cases .col-sm-6 img {
   min-height: 180px;
   transition: .3s;
   filter: grayscale(1);
 }
 
-.cases .col-sm-3:hover img, {
+.cases .col-md-3:hover img,
+.cases .col-sm-6:hover img, {
   filter: grayscale(0);
   transition: .3s;
 }
@@ -746,8 +749,7 @@ ul#menu-primary-nav .nav-consultation a {
     background: #666;
     color: white;
     padding: 15px 9px 5px;
-    max-width: 250px;
-    min-width: 250px;
+    width: 250px;
     position: absolute;
     bottom: -35px;
     left: 22px;
@@ -760,7 +762,8 @@ ul#menu-primary-nav .nav-consultation a {
     justify-content: center;
 }
 
-.cases .col-sm-3:hover .cta-banner-wrapper {
+.cases .col-md-3:hover .cta-banner-wrapper,
+.cases .col-sm-6:hover .cta-banner-wrapper {
   border-bottom: 5px solid $leaf;
   transition: .3s;
 }
@@ -768,6 +771,11 @@ ul#menu-primary-nav .nav-consultation a {
 .hollow-button-wrapper p {
   font-size: 24px;
 }
+
+// .case-cta img {
+//   max-height: 146px;
+//   width: 100%;
+// }
 
 // Settlements Section
 
@@ -803,6 +811,10 @@ ul#menu-primary-nav .nav-consultation a {
 .consultation-banner-wrap a {
   color: $denim;
   font-size: 28px;
+}
+
+.consultation-banner-wrap a:hover {
+  color: $leaf;
 }
 
 .consultation-banner-wrap .flex-center {
@@ -2147,6 +2159,35 @@ ul.verdicts-list li:before {
 
   .quote-input-wrapper {
     width: 31%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .cta-banner-wrapper {
+    width: 200px;
+  }
+
+  .cta-banner-wrapper h3 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .case-cta {
+    margin-bottom: 54px;
+  }
+
+  .case-cta img {
+    max-height: 192px;
+    width: 100%;
+  }
+
+  .cta-banner-wrapper {
+    width: 330px;
+  }
+
+  .cta-banner-wrapper h3 {
+    font-size: 18px;
   }
 }
 
