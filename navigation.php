@@ -12,7 +12,7 @@
           <button class="cross"></button>
         </div>
         <div class="primary-nav">
-        <div class="blue-box"></div>
+        <!-- <div class="blue-box"></div> -->
         <?php wp_nav_menu (
           array(
             'theme_location'  =>  'primary'
