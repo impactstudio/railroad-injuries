@@ -31,10 +31,6 @@
 <!-- footer widget area 2 -->
 <div class="col-md-3 col-sm-6 col-xs-6 footer-widget">
 
-  <?php if (!is_front_page()) : ?>
-    <h4>Send Us a Message</h4>
-    <?php echo do_shortcode('[contact-form-7 id="175" title="Footer Contact Form"]'); ?>
-  <?php else: ?>
     <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('footer-widget-2')) : else : ?>
 
     <div class="pre-widget">
@@ -43,7 +39,6 @@
     </div>
 
     <?php endif; ?>
-  <?php endif; ?>
 
 </div>
 

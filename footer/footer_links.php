@@ -7,7 +7,7 @@
 <div class="footer-links-wrapper">
   <div class="container">
     <div class="footer-links">
-      <ul>
+      <ul class="footer-copy">
         <li>©2017 Copyright Rossi Vucinovich PC. All Rights Reserved.</li>
         <li>
           <a href="">Privacy Policy</a>

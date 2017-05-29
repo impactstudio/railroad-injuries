@@ -4,13 +4,6 @@
     <div class="row">
       <div class="col-lg-12 col-lg-offset-0 col-sm-10 col-sm-offset-1">
 <!-- layout -->
-        <div class="mobile-menu">
-          <!-- <div class="header-search mobile-search"> -->
-            <?php // get_search_form(); ?>
-          <!-- </div> -->
-          <button class="hamburger"></button>
-          <button class="cross"></button>
-        </div>
         <div class="primary-nav">
         <!-- <div class="blue-box"></div> -->
         <?php wp_nav_menu (
@@ -25,4 +18,11 @@
     </div>
   </div>
 </section>
+<div class="mobile-menu">
+  <!-- <div class="header-search mobile-search"> -->
+    <?php // get_search_form(); ?>
+  <!-- </div> -->
+  <button class="hamburger"></button>
+  <button class="cross"></button>
+</div>
 <!-- layout -->
