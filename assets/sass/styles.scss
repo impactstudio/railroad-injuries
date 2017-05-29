@@ -1792,6 +1792,16 @@ ul.verdicts-list li:before {
 
 .page-content {
   @extend .justify;
+  ul {
+    margin-bottom: 20px;
+  }
+  h1, 
+  h2, 
+  h3, 
+  h4, 
+  h5 {
+    text-align: left;
+  }
 }
 
 .hero .black-overlay {
