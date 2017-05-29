@@ -18,7 +18,7 @@
 			</div>
 
 		</div><!-- row -->
-		<div class="row">
+		<div class="row flex-center flex-row-to-col">
 			<?php if(have_rows('lawyers')) : ?>
 				<?php while(have_rows('lawyers')) : the_row(); 
 					$lawyer = get_sub_field('lawyer');
