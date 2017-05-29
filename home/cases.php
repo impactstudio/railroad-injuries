@@ -18,12 +18,11 @@
         <p><?php echo $cases_subheader; ?></p>
       </div>
 
-      <div class="row">
         <?php if(have_rows('cases')) : ?>
 
           <?php while(have_rows('cases')) : the_row(); ?>
 
-            <div class="col-sm-3">
+            <div class="col-md-3 col-sm-6">
               <a href="<?php echo get_sub_field('url'); ?>">
                 <img src="<?php echo get_sub_field('image')['url']; ?>" alt="<?php echo get_sub_field('image')['alt']; ?>">
                 <div class="cta-banner-wrapper text-center">
@@ -35,7 +34,6 @@
           <?php endwhile; ?>
 
         <?php endif; ?>
-      </div>
 
       <?php hollow_btn("View All Cases", "#"); ?>
 
