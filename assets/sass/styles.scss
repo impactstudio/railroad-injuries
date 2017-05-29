@@ -229,7 +229,7 @@ $latoBold: "latobold", Helvetica;
 }
 
 .btn.btn-hollow {
-  color: $cloudy;
+  color: grey;
   border: solid 1px;
   border-radius: 0;
   font-size: 18px;
@@ -528,7 +528,7 @@ a:hover {
 }
 
 .form-wrapper hr {
-  border-top: 3px solid $smoke;
+  margin-bottom: 20px;
 }
 
 .form-wrapper input,
@@ -690,7 +690,7 @@ ul#menu-primary-nav .nav-consultation a {
 // HERO
 
 .hero {
-  background: url("#{$image_path}bg_railroad-injuries-railroad-accidents-fela.jpg") center top -190px no-repeat;
+  background: url("#{$image_path}bg_railroad-injuries-railroad-accidents-fela.jpg") center top -184px no-repeat;
   background-size: cover;
   color: white;
   position: relative;
@@ -822,6 +822,17 @@ ul#menu-primary-nav .nav-consultation a {
   background: url(../img/bg_lawyers.jpg) top center no-repeat;
   background-size: cover;
   margin-top: -100px;
+  .lawyer-cta:first-child {
+    @extend .col-sm-offset-3;
+  }
+  .lawyer-cta h4, 
+  .lawyer-cta p {
+    color: $ash;
+  }
+  a:hover {
+    color: $denim;
+    cursor: pointer;
+  }
 }
 
 .lawyer-section-wrap h2 {
@@ -953,6 +964,25 @@ ul#menu-primary-nav .nav-consultation a {
 /*--------------------------------
 5.0 FOOTER
 --------------------------------*/
+
+.testimonial-section-wrap {
+  background: url("#{$image_path}bg_testimonials.jpg") center center no-repeat;
+  background-size: cover;
+  color: white;
+
+  .owl-carousel {
+    height: 200px;
+    img.stars {
+      width: 25%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.client-name {
+  font-size: 2em;
+  margin-top: 20px;
+}
 
 footer {
   color: $cream;
@@ -1119,6 +1149,19 @@ footer {
   margin: 0 15px 15px 0;
 }
 
+.featured-tag h4 {
+  margin-bottom: 0;
+  color: white;
+}
+
+.post-details a {
+  color: $denim;
+}
+
+.post-details-headline {
+  min-height: 56px;
+}
+
 .post-margin-fix:nth-child(2n) {
   margin-right: 0 !important;
 }
@@ -1150,7 +1193,7 @@ footer {
 }
 
 .post-details {
-  padding: 0 15px 5px 15px;
+  padding: 15px;
   background-color: #f9f9f9;
 }
 
@@ -1211,12 +1254,8 @@ footer {
   color: #394753;
 }
 
-.latest-post .post-meta a {
-  font-weight: bold;
-}
-
 hr {
-  margin: 15px -15px 3px -15px;
+  margin: 15px -15px 15px -15px;
   background-color: #ccc;
   height: 2px;
   border: none;
@@ -1309,6 +1348,10 @@ div.social-sharing {
   width: 100%;
   display: block;
   height: 185px;
+}
+
+.post-image-sm img {
+  height: 250px;
 }
 .post .post-excerpt {
   width: 100%;
@@ -1535,6 +1578,10 @@ div.social-sharing {
 .post-content-wrapper {
   padding: 15px 15px 5px 15px;
   background-color: $off_white;
+}
+
+.logged-in-as a {
+  color: $denim;
 }
 
 /*--------------------------------
