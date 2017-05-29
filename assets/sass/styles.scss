@@ -2529,6 +2529,28 @@ ul.verdicts-list li:before {
   }
 }
 
+@media screen and (max-width: 767px){
+  .case-cta {
+      margin-bottom: 50px;
+  }
+
+  .cta-banner-wrapper {
+      width: 89%;
+  }
+
+  .counter {
+    font-size: 3em;
+  }
+
+  .btn.btn-hollow span, .btn-hollow#submit span {
+    height: 35.5px;
+  }
+
+  .btn.btn-hollow, .btn-hollow#submit {
+    font-size: 16px;
+  }
+}
+
 @media all and (max-width: 700px) {
 
   .logo {
@@ -2684,7 +2706,7 @@ ul.verdicts-list li:before {
 
 @media all and (max-width: 440px) {
   .hero {
-    height: 220px;
+    // height: 220px;
   }
 
   .hero h1 {
@@ -2733,5 +2755,13 @@ ul.verdicts-list li:before {
 @media all and (max-width: 320px) {
   .markets-thumbnail-headline {
     font-size: 18px;
+  }
+
+  .cta-banner-wrapper {
+      width: 86%;
+  }
+
+  .counter {
+    font-size: 2em;
   }
 }
