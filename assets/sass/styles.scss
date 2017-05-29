@@ -616,7 +616,7 @@ a:hover {
 
 .main-navigation {
   padding: 24px 0;
-  background-color: #222;
+  background-color: $dark;
 }
 
 ul#menu-primary-nav {
@@ -678,6 +678,7 @@ ul#menu-primary-nav .nav-consultation a {
   right: 15px;
   display: none;
   z-index: 6;
+  margin-top: -30px;
 }
 
 .hamburger:hover {
@@ -1009,6 +1010,10 @@ footer {
       margin-bottom: 0;
     }
   }
+}
+
+footer .menu {
+  background-color: transparent;
 }
 
 .menu-item a {
@@ -2050,6 +2055,9 @@ ul.verdicts-list li:before {
 }
 
 @media all and (max-width: 1400px) {
+  .hero {
+    background-position: center top;
+  }
   .company-details {
     font-size: 13px;
   }
@@ -2083,11 +2091,16 @@ ul.verdicts-list li:before {
   }
 
   .menu li {
-    padding: 0 23px 0 0;
+    font-size: 12px;
+    padding: 0 12px 0 0;
   }
 
   .menu li a {
     letter-spacing: 0;
+  }
+
+  ul#menu-primary-nav .menu-item {
+    padding: 0 12px;
   }
 
   .menu li:first-child {
@@ -2151,6 +2164,34 @@ ul.verdicts-list li:before {
 }
 
 @media all and (max-width: 991px) {
+
+  .mobile-menu, 
+  .primary-nav {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .mobile-menu {
+    padding: 30px 0;
+    background-color: $dark;
+  }
+
+  #menu-primary-nav {
+    margin-top: 0;
+  }
+
+  .primary-nav {
+    display: none;
+    padding: 0;
+    li.menu-item {
+      margin-bottom: 0;
+    }
+  }
+  
+  .main-navigation {
+    display: none;
+  }
+
   .company-details {
     font-size: 9px;
   }
@@ -2170,6 +2211,23 @@ ul.verdicts-list li:before {
 
   .header-info {
     flex-direction: column;
+  }
+
+  ul#menu-primary-nav {
+    position: relative;
+    z-index: 1;
+  }
+
+  ul#menu-primary-nav .menu-item {
+    display: block;
+    border-right: none;
+    line-height: 15px;
+    padding: 10px 0;
+    font-size: 18px;
+    border-bottom: 1px solid $dark;
+    &:last-child {
+      border-bottom: none;
+    }
   }
 
   .header-info li {
@@ -2193,10 +2251,6 @@ ul.verdicts-list li:before {
     display: inline;
   }
 
-  .primary-nav {
-    display: none;
-  }
-
   .mobile-menu {
     position: relative;
     z-index: 7;
@@ -2206,14 +2260,22 @@ ul.verdicts-list li:before {
     display: none;
   }
 
+  .hero h1 {
+    margin-top: 0;
+  }
+
   .mobile-search {
     display: block;
     position: absolute;
     bottom: 15px;
   }
 
-  .mobile-menu, .hamburger, .cross {
+  .mobile-menu, .hamburger {
     display: block;
+  }
+
+  .cross {
+    display: none;
   }
 
   .menu {
@@ -2314,6 +2376,17 @@ ul.verdicts-list li:before {
   .post.content-wrapper {
     padding-top: 70px;
   }
+
+  footer .menu {
+    margin-top: 0;
+    li {
+      text-align: left;
+      padding: 0;
+      a {
+        font-size: 16px;
+      }
+    }
+  }
 }
 
 @media all and (max-width: 940px) {
@@ -2361,7 +2434,7 @@ ul.verdicts-list li:before {
   .flex-row-to-col {
     flex-direction: column;
   }
-  
+
   .markets-thumbnail {
     height: 175px;
   }
@@ -2395,10 +2468,6 @@ ul.verdicts-list li:before {
 }
 
 @media all and (max-width: 700px) {
-  .hero {
-    height: 250px;
-    padding-top: 70px;
-  }
 
   .logo {
     width: auto;
@@ -2414,14 +2483,8 @@ ul.verdicts-list li:before {
     font-family: $montBold;
   }
 
-  .primary-nav {
-    z-index: 5;
-    padding: 0 0 20px 0;
-  }
-
   .primary-nav li {
     display: block;
-    font-size: 18px;
     text-align: center;
     margin-bottom: 10px;
     width: 100%;
