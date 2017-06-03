@@ -33,12 +33,12 @@
   $('.mobile-menu').after($primaryNav);
   $('.hamburger').on('click', function() {
     $('.primary-nav').slideToggle('fast');
+    $('.cross').show();
+    $('.hamburger').hide();
   });
 
   $('.cross').on('click', function() {
-    $('.mobile-menu').slideToggle('fast', function() {
-      $('.mobile-menu .primary-nav').hide();
-    });
+    $('.primary-nav').slideToggle('fast');
     $('.cross').hide();
     $('.hamburger').show();
   });
