@@ -15,4 +15,8 @@
 
 	<?php endif; ?>
 
+  <!-- fourth widget area -->
+  <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('sidebar-widget-4')) : ?>
+
+	<?php endif; ?>
 </div>

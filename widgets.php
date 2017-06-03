@@ -23,7 +23,7 @@ if (function_exists('register_sidebar')) {
 	register_sidebar(array(
 		'name' => 'Sidebar Widget 2',
 		'id'   => 'sidebar-widget-2',
-		'description'   => 'middle widget area',
+		'description'   => '1st middle widget area',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h4>',
@@ -33,6 +33,16 @@ if (function_exists('register_sidebar')) {
 	register_sidebar(array(
 		'name' => 'Sidebar Widget 3',
 		'id'   => 'sidebar-widget-3',
+		'description'   => '2nd middle widget area',
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h4>',
+		'after_title'   => '</h4>'
+	));
+
+	register_sidebar(array(
+		'name' => 'Sidebar Widget 4',
+		'id'   => 'sidebar-widget-4',
 		'description'   => 'bottom widget area',
 		'before_widget' => '<li id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</li>',
