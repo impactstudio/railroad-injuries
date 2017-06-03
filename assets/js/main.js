@@ -49,8 +49,13 @@
     var counter = new Counter('.counter');
 
     var docWindow = $(window)
-    var counterDistance = $('.settlements').offset().top;
     var alreadyScrolled = false;
+
+    if (window.outerWidth < 991) {
+      mobileMenu();
+    }
+
+    var counterDistance = $('.settlements').offset().top;
 
     docWindow.scroll(function() {
         if (!alreadyScrolled) {
@@ -60,10 +65,6 @@
           }
         }
     });
-
-    if (window.outerWidth < 991) {
-      mobileMenu();
-    }
 
     $('.owl-carousel').owlCarousel({
       loop: true,
